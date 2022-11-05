@@ -204,9 +204,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec  xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec  xbacklight -dec 20 # decrease screen brightness
-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 # Touchpad controls
 bindsym XF86TouchpadToggle exec  ~/.config/toggletouchpad.sh # toggle touchpad
 
