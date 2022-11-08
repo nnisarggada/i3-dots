@@ -224,7 +224,7 @@ gaps outer 20
 smart_gaps on
 smart_gaps inverse_outer
 
-for_window [all] border pixel 5
+for_window [all] border pixel 0
 for_window [all] title_format " "
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Blueman-manager"] floating enable
