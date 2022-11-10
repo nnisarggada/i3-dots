@@ -262,3 +262,4 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id dunst
 exec_always --no-startup-id clight
 exec --no-startup-id copyq
+exec --no-startup-id firefox
