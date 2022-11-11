@@ -13,4 +13,4 @@ configuration{
     display-Network: " 󰤨  Network ";
 }
 
-@theme "rounded-purple-dark"
+@theme "rounded-gray-dark"
