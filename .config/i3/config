@@ -235,6 +235,7 @@ for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pcmanfm"] floating enable
 for_window [class="octopi"] floating enable
 for_window [class="octopi-cachecleaner"] floating enable
+for_window [class="Steam"] floating enable
 
 
 for_window [class="Spotify"] move to workspace $ws10
