@@ -1,9 +1,9 @@
 configuration{
     modi: "run,drun,window";
     lines: 5;
-    font: "Sarasa Nerd Font 14";
+    font: "JetBrains Mono";
     show-icons: true;
-    icon-theme: "ePapirus-dark";
+    icon-theme: "ePapirus-Dark";
     terminal: "kitty";
     drun-display-format: "{icon} {name}";
     disable-history: false;
