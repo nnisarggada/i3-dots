@@ -220,9 +220,7 @@ exec_always autotiling
 
 #Beautify
 gaps inner 10
-gaps outer 20
-smart_gaps on
-smart_gaps inverse_outer
+gaps top 50
 
 for_window [all] border pixel 0
 for_window [all] title_format " "
