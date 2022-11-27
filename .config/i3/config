@@ -220,7 +220,7 @@ exec_always autotiling
 
 #Beautify
 gaps inner 10
-gaps top 50
+gaps top 35
 
 for_window [all] border pixel 0
 for_window [all] title_format " "
@@ -234,9 +234,9 @@ for_window [class="Pcmanfm"] floating enable
 for_window [class="octopi"] floating enable
 for_window [class="octopi-cachecleaner"] floating enable
 for_window [class="Steam"] floating enable
-
-
+for_window [class="GParted"] floating enable
 for_window [class="Spotify"] move to workspace $ws10
+for_window [class="Spotify-launcher"] move to workspace $ws10
 for_window [class="csgo_linux64"] move to workspace $ws9
 
 
@@ -247,7 +247,7 @@ exec_always --no-startup-id xinput set-prop "SYNA328B:00 06CB:CD50 Touchpad" "li
 exec_always --no-startup-id xmodmap -e "clear lock"
 exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = BackSpace" 
 bindsym $mod+l exec i3lock-fancy -g && playerctl pause
-bindsym $mod+Shift+s exec spotify
+bindsym $mod+Shift+s exec spotify & spotify-launcher
 bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
 
