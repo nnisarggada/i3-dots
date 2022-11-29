@@ -250,7 +250,7 @@ bindsym $mod+l exec i3lock-fancy -g && playerctl pause
 bindsym $mod+Shift+s exec spotify & spotify-launcher
 bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
-
+bindsym Print exec flameshot gui --path /home/nnisarggada/Pictures/Screenshots/
 
 #Startups
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
