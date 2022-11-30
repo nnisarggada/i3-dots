@@ -8,7 +8,7 @@
 
     notification_limit = 5
 
-    offset = 25x45
+    offset = 0x32
 
     indicate_hidden = true
 
@@ -42,7 +42,7 @@
 
     ### Text ###
 
-    font = Fira Code Nerd Font 10
+    font = JetBrains Mono 8
 
 
     # The spacing between lines.  If the height is smaller than the
