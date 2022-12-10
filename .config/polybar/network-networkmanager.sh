@@ -54,7 +54,7 @@ network_print() {
 
         printf "\n"
     else
-        echo "#6"
+        echo ""
     fi
 }
 
