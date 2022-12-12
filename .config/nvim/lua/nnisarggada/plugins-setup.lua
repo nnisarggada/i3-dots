@@ -101,6 +101,9 @@ return packer.startup(function(use)
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
+	-- transparent bg
+	use("xiyaowong/nvim-transparent")
+
 	-- colorizer
 	use("norcalli/nvim-colorizer.lua")
 	if packer_bootstrap then
