@@ -256,4 +256,4 @@ exec_always --no-startup-id xclip
 exec_always --no-startup-id clight
 exec --no-startup-id firefox
 exec --no-startup-id lxsession
-exec_always --no-startup-id killall copyq && copyq
+exec --no-startup-id killall copyq && copyq
