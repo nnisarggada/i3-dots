@@ -176,11 +176,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-set $bg-color 	                #000000
-set $inactive-bg-color          #111111
+set $bg-color 	                #CAD5FF
+set $inactive-bg-color          #0c0c1e
 set $text-color                 #cdd6f4
 set $inactive-text-color        #a6adc8
-set $urgent-bg-color            #f38ba8
+set $urgent-bg-color            #99112f
 
 # window colors
 #                       border              background         text                 indicator
@@ -215,7 +215,7 @@ exec_always autotiling
 gaps inner 10
 gaps top 35
 
-for_window [all] border pixel 0
+for_window [all] border pixel 5
 for_window [all] title_format " "
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Blueman-manager"] floating enable
@@ -248,7 +248,7 @@ bindsym Print exec flameshot gui
 #Startups
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --off --output DP-1 --off
-exec_always --no-startup-id feh --bg-fill ~/Pictures/cold-foggy-mountain-4k.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/cold-mountains.jpg
 exec_always --no-startup-id picom --experimental-backends
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id dunst
