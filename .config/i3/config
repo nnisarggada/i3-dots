@@ -180,7 +180,7 @@ set $bg-color 	                #CAD5FF
 set $inactive-bg-color          #0c0c1e
 set $text-color                 #cdd6f4
 set $inactive-text-color        #a6adc8
-set $urgent-bg-color            #99112f
+set $urgent-bg-color            #ff4151
 
 # window colors
 #                       border              background         text                 indicator
