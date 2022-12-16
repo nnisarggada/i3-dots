@@ -254,5 +254,3 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id dunst
 exec_always --no-startup-id xclip
 exec --no-startup-id firefox
-exec --no-startup-id lxsession
-exec --no-startup-id killall copyq && copyq
