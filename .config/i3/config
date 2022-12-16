@@ -176,7 +176,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-set $bg-color 	                #CAD5FF
+set $bg-color 	                #cad5ff
 set $inactive-bg-color          #0c0c1e
 set $text-color                 #cdd6f4
 set $inactive-text-color        #a6adc8
@@ -243,6 +243,7 @@ bindsym $mod+Mod1+l exec i3lock-fancy -g && playerctl pause
 bindsym $mod+Shift+s exec spotify & spotify-launcher
 bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
+bindsym $mod+period exec rofi -show emoji
 bindsym Print exec flameshot gui 
 
 #Startups
@@ -253,4 +254,3 @@ exec_always --no-startup-id picom --experimental-backends
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id dunst
 exec_always --no-startup-id xclip
-exec --no-startup-id firefox
