@@ -18,3 +18,4 @@ require("nnisarggada.plugins.treesitter")
 require("nnisarggada.plugins.gitsigns")
 
 vim.cmd([[highlight NvimTreeIndentMarker guifg=#3Fc5FF]])
+vim.cmd([[hi NvimTreeNormal guibg=NONE ctermbg=NONE]])
