@@ -255,4 +255,4 @@ exec_always --no-startup-id picom --experimental-backends
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id dunst
 exec_always --no-startup-id xclip
-exec_always --no-startup-id killall copyq & copyq
+exec_always --no-startup-id copyq
