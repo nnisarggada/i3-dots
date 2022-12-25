@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # The name of polybar bar which houses the main spotify module and the control modules.
-PARENT_BAR="now-playing"
+PARENT_BAR="bar1"
 PARENT_BAR_PID=$(pgrep -a "polybar" | grep "$PARENT_BAR" | cut -d" " -f1)
 
 # Set the source audio player here.
@@ -42,7 +42,7 @@ else
         update_hooks "$PARENT_BAR_PID" 2
         playerctl --player=$PLAYER metadata --format "$FORMAT"
     elif [ "$STATUS" = "No player is running"  ]; then
-        echo "$STATUS"
+        echo "Not playing"
     else
         update_hooks "$PARENT_BAR_PID" 1
         playerctl --player=$PLAYER metadata --format "$FORMAT"
