@@ -35,6 +35,7 @@ fi
 
 if [ "$1" == "--status" ]; then
     echo "$STATUS"
+    
 else
     if [ "$STATUS" = "Stopped" ]; then
         echo "No music is playing"
@@ -42,7 +43,10 @@ else
         update_hooks "$PARENT_BAR_PID" 2
         playerctl --player=$PLAYER metadata --format "$FORMAT"
     elif [ "$STATUS" = "No player is running"  ]; then
-        echo "Not playing"
+        polybar-msg action next module_hide
+        polybar-msg action previous module_hide
+        polybar-msg action spotify-play-pause module_hide
+        polybar-msg action spotify module_hide
     else
         update_hooks "$PARENT_BAR_PID" 1
         playerctl --player=$PLAYER metadata --format "$FORMAT"
