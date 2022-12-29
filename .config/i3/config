@@ -228,6 +228,7 @@ for_window [class="octopi"] floating enable
 for_window [class="octopi-cachecleaner"] floating enable
 for_window [class="Steam"] floating enable
 for_window [class="GParted"] floating enable
+for_window [class="qBittorrent"] floating enable
 for_window [class="Spotify"] move to workspace $ws10
 for_window [class="Spotify-launcher"] move to workspace $ws10
 for_window [class="csgo_linux64"] move to workspace $ws9
@@ -243,6 +244,7 @@ bindsym $mod+Mod1+l exec i3lock-fancy -g && playerctl pause
 bindsym $mod+Shift+s exec spotify & spotify-launcher
 bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
+bindsym $mod+c exec i3-msg move position center
 bindsym $mod+period exec rofi -show emoji
 bindsym Print exec flameshot gui 
 
@@ -255,5 +257,5 @@ exec_always --no-startup-id picom --experimental-backends
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id dunst
 exec_always --no-startup-id xclip
-exec_always --no-startup-id killall copyq
 exec_always --no-startup-id copyq
+exec_always --no-startup-id flameshot
