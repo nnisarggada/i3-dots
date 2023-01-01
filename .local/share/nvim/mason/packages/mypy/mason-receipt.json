@@ -1,0 +1,1 @@
+{"name":"mypy","links":{"bin":{"mypy":"venv\/bin\/mypy"}},"secondary_sources":[],"schema_version":"1.0","metrics":{"start_time":1672081609990,"completion_time":1672081615333},"primary_source":{"type":"pip3","package":"mypy"}}
