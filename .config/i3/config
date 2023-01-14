@@ -252,7 +252,7 @@ bindsym Print exec flameshot gui
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --off --output DP-1 --off
 exec --no-startup-id lxsession
-exec_always --no-startup-id feh --bg-fill ~/Pictures/stray.png
+exec_always --no-startup-id feh --bg-fill ~/Pictures/cold-foggy-mountain-4k.jpg
 exec_always --no-startup-id picom --experimental-backends
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id dunst
