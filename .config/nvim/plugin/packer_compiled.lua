@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  Colorizer = {
+    loaded = true,
+    path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/Colorizer",
+    url = "https://github.com/chrisbra/Colorizer"
+  },
   ["Comment.nvim"] = {
     loaded = true,
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/Comment.nvim",
@@ -129,11 +134,6 @@ _G.packer_plugins = {
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["markdown-preview.nvim"] = {
-    loaded = true,
-    path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
-    url = "https://github.com/iamcco/markdown-preview.nvim"
-  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -163,11 +163,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-colorizer.lua"] = {
-    loaded = true,
-    path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
-    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
