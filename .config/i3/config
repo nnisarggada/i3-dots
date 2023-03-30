@@ -213,9 +213,8 @@ exec_always autotiling
 
 #Beautify
 gaps inner 10
-gaps top 35
 
-for_window [all] border pixel 5
+for_window [all] border pixel 3
 for_window [all] title_format " "
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Blueman-manager"] floating enable
@@ -247,8 +246,9 @@ bindsym $mod+e exec pcmanfm
 bindsym $mod+c exec i3-msg move position center
 bindsym $mod+period exec rofi -show emoji
 bindsym Print exec flameshot gui 
-#bindsym $mod+z exec polybar-msg cmd show toggle
-bindsym $mod+z exec polybar-msg cmd toggle; gaps top all toggle 35 
+bindsym $mod+z exec polybar-msg cmd toggle
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
 
 #Startups
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
