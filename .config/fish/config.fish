@@ -3,4 +3,4 @@ if status is-interactive
 end
 
 set fish_greeting
-nitch
+rxfetch
