@@ -214,7 +214,7 @@ exec_always autotiling
 #Beautify
 gaps inner 10
 
-for_window [all] border pixel 3
+for_window [all] border pixel 2
 for_window [all] title_format " "
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Blueman-manager"] floating enable
