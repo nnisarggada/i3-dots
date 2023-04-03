@@ -217,6 +217,7 @@ gaps inner 10
 for_window [all] border pixel 2
 for_window [all] title_format " "
 for_window [class="Pavucontrol"] floating enable
+for_window [class="copyq"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Org.gnome.Nautilus"] floating enable
 for_window [class="Lxappearance"] floating enable
@@ -249,6 +250,7 @@ bindsym Print exec flameshot gui
 bindsym $mod+z exec polybar-msg cmd toggle
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+v exec copyq show && i3-msg move position center
 
 #Startups
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

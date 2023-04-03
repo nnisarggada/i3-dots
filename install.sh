@@ -5,8 +5,6 @@ mkdir ~/Pictures
 mkdir ~/Music
 mkdir ~/GitRepos
 mkdir ~/Downloads
-mkdir ~/Lappy
-mkdir ~/External
 mkdir ~/.icons
 mkdir ~/.fonts
 
@@ -17,7 +15,6 @@ sudo cp -r ./.icons/* ~/.icons/
 sudo cp -r ./.fonts/* ~/.fonts/
 sudo cp -r ./Pictures/* ~/Pictures/
 sudo cp -r ./Music/* ~/Music/
-sudo cp ./mountNAS.sh ~/
 sudo cp ./.vimrc ~/
 sudo cp ./.viminfo ~/
 sudo cp ./.vimrc.plug ~/
