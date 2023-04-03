@@ -1,116 +1,91 @@
-local M = {}
-local merge_tb = vim.tbl_deep_extend
+local command = vim.api.nvim_create_user_command
 
-M.load_config = function()
-  local config = require "core.default_config"
-  local chadrc_path = vim.api.nvim_get_runtime_file("lua/custom/chadrc.lua", false)[1]
-
-  if chadrc_path then
-    local chadrc = dofile(chadrc_path)
-
-    config.mappings = M.remove_disabled_keys(chadrc.mappings, require "core.mappings")
-    config = merge_tb("force", config, chadrc)
-  end
-
-  config.mappings.disabled = nil
-  return config
-end
-
-M.remove_disabled_keys = function(chadrc_mappings, default_mappings)
-  if not chadrc_mappings then
-    return default_mappings
-  end
-
-  -- store keys in a array with true value to compare
-  local keys_to_disable = {}
-  for _, mappings in pairs(chadrc_mappings) do
-    for mode, section_keys in pairs(mappings) do
-      if not keys_to_disable[mode] then
-        keys_to_disable[mode] = {}
-      end
-      section_keys = (type(section_keys) == "table" and section_keys) or {}
-      for k, _ in pairs(section_keys) do
-        keys_to_disable[mode][k] = true
-      end
+function _G.reload_core()
+  for name, _ in pairs(package.loaded) do
+    if name:match "^core" then
+      package.loaded[name] = nil
     end
   end
 
-  -- make a copy as we need to modify default_mappings
-  for section_name, section_mappings in pairs(default_mappings) do
-    for mode, mode_mappings in pairs(section_mappings) do
-      mode_mappings = (type(mode_mappings) == "table" and mode_mappings) or {}
-      for k, _ in pairs(mode_mappings) do
-        -- if key if found then remove from default_mappings
-        if keys_to_disable[mode] and keys_to_disable[mode][k] then
-          default_mappings[section_name][mode][k] = nil
-        end
-      end
-    end
-  end
-
-  return default_mappings
+  dofile(vim.env.MYVIMRC)
 end
 
-M.load_mappings = function(section, mapping_opt)
-  local function set_section_map(section_values)
-    if section_values.plugin then
-      return
-    end
+function _G.format_code()
+  return vim.lsp.buf.format { async = true }
+end
 
-    section_values.plugin = nil
+function _G.set_keymaps(keymaps, mode)
+  local opt = { silent = true }
 
-    for mode, mode_values in pairs(section_values) do
-      local default_opts = merge_tb("force", { mode = mode }, mapping_opt or {})
-      for keybind, mapping_info in pairs(mode_values) do
-        -- merge default + user opts
-        local opts = merge_tb("force", default_opts, mapping_info.opts or {})
-
-        mapping_info.opts, opts.mode = nil, nil
-        opts.desc = mapping_info[2]
-
-        vim.keymap.set(mode, keybind, mapping_info[1], opts)
-      end
-    end
+  if mode == "c" then
+    opt = { expr = true }
   end
 
-  local mappings = require("core.utils").load_config().mappings
-
-  if type(section) == "string" then
-    mappings[section]["plugin"] = nil
-    mappings = { mappings[section] }
-  end
-
-  for _, sect in pairs(mappings) do
-    set_section_map(sect)
+  for keymap, value in pairs(keymaps) do
+    vim.keymap.set(mode, keymap, value, opt)
   end
 end
 
-M.lazy_load = function(plugin)
-  vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
-    group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. plugin, {}),
-    callback = function()
-      local file = vim.fn.expand "%"
-      local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
-
-      if condition then
-        vim.api.nvim_del_augroup_by_name("BeLazyOnFileOpen" .. plugin)
-
-        -- dont defer for treesitter as it will show slow highlighting
-        -- This deferring only happens only when we do "nvim filename"
-        if plugin ~= "nvim-treesitter" then
-          vim.schedule(function()
-            require("lazy").load { plugins = plugin }
-
-            if plugin == "nvim-lspconfig" then
-              vim.cmd "silent! do FileType"
-            end
-          end, 0)
-        else
-          require("lazy").load { plugins = plugin }
-        end
-      end
-    end,
-  })
+function _G.set_option(options)
+  for name, value in pairs(options) do
+    vim.opt[name] = value
+  end
 end
 
-return M
+function _G.set_global(globals)
+  for name, value in pairs(globals) do
+    vim.g[name] = value
+  end
+end
+
+function _G.update_config()
+  local args = "git -C " .. vim.fn.stdpath "config" .. " pull --ff-only"
+  vim.fn.system(args)
+end
+
+function _G.list_registered_providers_names(filetype)
+  local s = require "null-ls.sources"
+  local available_sources = s.get_available(filetype)
+  local registered = {}
+  for _, source in ipairs(available_sources) do
+    for method in pairs(source.methods) do
+      registered[method] = registered[method] or {}
+      table.insert(registered[method], source.name)
+    end
+  end
+  return registered
+end
+
+function _G.list_registered_formatters(filetype)
+  local registered_providers = list_registered_providers_names(filetype)
+  local method = require("null-ls").methods.FORMATTING
+  return registered_providers[method] or {}
+end
+
+function _G.list_registered_linters(filetype)
+  local registered_providers = list_registered_providers_names(filetype)
+  local method = require("null-ls").methods.DIAGNOSTICS
+  return registered_providers[method] or {}
+end
+
+command("Format", function()
+  format_code()
+end, { nargs = "*" })
+
+command("Reload", function()
+  if vim.bo.buftype == "" then
+    reload_core()
+    vim.notify("Core Reload Done", vim.log.levels.INFO)
+  else
+    vim.notify("Not available in this window/buffer", vim.log.levels.INFO)
+  end
+end, { nargs = "*" })
+
+command("Update", function()
+  update_config()
+  vim.notify("Update Done", vim.log.levels.INFO)
+end, { nargs = "*" })
+
+command("LuaSnipEdit", function()
+  require("luasnip.loaders").edit_snippet_files()
+end, { nargs = "*" })
