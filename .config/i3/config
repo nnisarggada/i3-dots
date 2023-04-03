@@ -229,7 +229,7 @@ for_window [class="octopi-cachecleaner"] floating enable
 # for_window [class="Steam"] floating enable
 for_window [class="GParted"] floating enable
 for_window [class="qBittorrent"] floating enable
-for_window [class="Spotify"] move to workspace $ws10
+for_window [class="Steam"] floating enable
 for_window [class="Spotify-launcher"] move to workspace $ws10
 for_window [class="csgo_linux64"] move to workspace $ws9
 
