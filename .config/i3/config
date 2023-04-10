@@ -39,6 +39,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec kitty --class floating
 
 # kill focused window
 bindsym $mod+q kill
@@ -216,6 +217,7 @@ gaps inner 10
 
 for_window [all] border pixel 2
 for_window [all] title_format " "
+for_window [class="floating"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="copyq"] floating enable
 for_window [class="Blueman-manager"] floating enable
@@ -251,7 +253,6 @@ bindsym $mod+v exec copyq show && i3-msg move position center
 #Startups
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --off --output DP-1 --off
-exec --no-startup-id lxsession
 exec_always --no-startup-id feh --bg-fill ~/Pictures/evening-sky.png
 exec_always --no-startup-id picom --experimental-backends
 exec_always --no-startup-id ~/.config/polybar/launch.sh
