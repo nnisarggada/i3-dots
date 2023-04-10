@@ -8,7 +8,7 @@ mkdir ~/Downloads
 mkdir ~/.icons
 mkdir ~/.fonts
 
-yay -S autotiling bluez bluez-libs bluez-utils dunst git github-cli lxappearance papirus-icon-theme pavucontrol picom-jonaburg-git playerctl pulseaudio-bluetooth blueman qt5ct qt5-styleplugins rofi-bluetooth-git rofi-wifi-menu-git rofi-power-menu-git rofi-emoji gparted flameshot unzip copyq i3lock-fancy-git ranger polybar rofi xorg-xinput firefox fish kitty pcmanfm htop rxfetch brightnessctl stacer ntfs-3g udisks2 gvfs ttf-ms-fonts bibata-cursor-theme neovim nodejs npm lua python-pillow zathura sweet-gtk-theme-dark polkit-gnome feh zscroll-git ttf-joypixels zathura-pdf-mupdf gtk-engine-murrine xclip
+yay -S autotiling bluez bluez-libs bluez-utils dunst git github-cli lxappearance papirus-icon-theme pavucontrol picom-jonaburg-git playerctl pulseaudio-bluetooth blueman qt5ct qt5-styleplugins rofi-bluetooth-git rofi-wifi-menu-git rofi-power-menu-git rofi-emoji gparted flameshot unzip copyq i3lock-fancy-git ranger polybar rofi xorg-xinput firefox fish kitty pcmanfm htop rxfetch brightnessctl stacer ntfs-3g udisks2 gvfs ttf-ms-fonts bibata-cursor-theme neovim nodejs npm lua python-pillow zathura sweet-gtk-theme-dark polkit-gnome feh zscroll-git ttf-joypixels zathura-pdf-mupdf gtk-engine-murrine xclip python-pip
 
 sudo cp -r ./.config/* ~/.config/
 sudo cp -r ./.icons/* ~/.icons/
