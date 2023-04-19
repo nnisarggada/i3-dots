@@ -1,12 +1,7 @@
--- Chadrc overrides this file
-
 local M = {}
 
 M.options = {
-  nvChad = {
-    update_url = "https://github.com/NvChad/NvChad",
-    update_branch = "v2.0",
-  },
+  nvchad_branch = "v2.0",
 }
 
 M.ui = {
@@ -15,8 +10,10 @@ M.ui = {
   hl_add = {},
   hl_override = {},
   changed_themes = {},
-  theme = "tokyonight", -- default theme
-  transparency = true,
+  theme_toggle = { "onedark", "one_light" },
+  theme = "onedark", -- default theme
+  transparency = false,
+  lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
 
   -- cmp themeing
   cmp = {
@@ -27,9 +24,7 @@ M.ui = {
     selected_item_bg = "colored", -- colored / simple
   },
 
-  telescope = {
-    style = "borderless", -- borderless / bordered
-  },
+  telescope = { style = "borderless" }, -- borderless / bordered
 
   ------------------------------- nvchad_ui modules -----------------------------
   statusline = {
@@ -50,7 +45,7 @@ M.ui = {
 
   -- nvdash (dashboard)
   nvdash = {
-    load_on_startup = true,
+    load_on_startup = false,
 
     header = {
       "           ▄ ▄                   ",
@@ -74,9 +69,7 @@ M.ui = {
     },
   },
 
-  cheatsheet = {
-    theme = "grid", -- simple/grid
-  },
+  cheatsheet = { theme = "grid" }, -- simple/grid
 
   lsp = {
     -- show function signatures i.e args as you type
@@ -87,11 +80,10 @@ M.ui = {
   },
 }
 
-M.plugins = "" -- path i.e "custom.plugins" -> custom/plugins.lua only and not custom/plugins/init.lua!!!!
+M.plugins = "" -- path i.e "custom.plugins", so make custom/plugins.lua file
 
 M.lazy_nvim = require "plugins.configs.lazy_nvim" -- config for lazy.nvim startup options
 
--- these are default mappings, check core.mappings for table structure
 M.mappings = {}
 
 return M
