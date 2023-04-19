@@ -215,6 +215,7 @@ exec_always autotiling
 #Beautify
 gaps inner 10
 
+for_window [urgent=latest] focus
 for_window [all] border pixel 2
 for_window [all] title_format " "
 for_window [class="floating"] floating enable
