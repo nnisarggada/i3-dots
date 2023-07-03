@@ -8,7 +8,7 @@
 
     notification_limit = 5
 
-    offset = 0x32
+    offset = 0x45
 
     indicate_hidden = true
 
