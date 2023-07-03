@@ -6,7 +6,7 @@ mkdir ~/Music
 mkdir ~/Downloads
 mkdir ~/.icons
 mkdir ~/.fonts
-mkdir ~/.oh-my-zsh/
+mkdir ~/.local/bin
 
 cd
 git clone https://aur.archlinux.org/yay.git
@@ -22,11 +22,10 @@ sudo updatedb
 
 cd ~/GitRepos/BnW-i3/
 sudo cp -r .config/* ~/.config/
-# sudo cp -r .oh-my-zsh/* ~/.oh-my-zsh/
 sudo cp -r alacritty-color-export/ ~/
 sudo cp -r .icons/* ~/.icons/
 sudo cp -r .fonts/* ~/.fonts/
-sudo cp -r .local/* ~/.local/
+sudo cp -r .local/bin ~/.local/
 sudo cp -r Pictures/* ~/Pictures/
 sudo cp -r Music/* ~/Music/
 sudo cp .vimrc ~/
