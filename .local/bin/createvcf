@@ -1,0 +1,3 @@
+#!/bin/sh
+
+awk 'BEGIN { FS=","; print "BEGIN:VCARD" } { print "FN:" $1; print "TEL:" $2; print "EMAIL:" $3 } END { print "END:VCARD" }' input.csv > output.vcf
