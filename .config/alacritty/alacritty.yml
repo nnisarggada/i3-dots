@@ -1,0 +1,57 @@
+window:
+  padding:
+    x: 20
+    y: 20
+  class:
+    instance: Alacritty
+    general: Alacritty
+  opacity: 0.8
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: JetBrains Mono
+    style: Medium
+  bold:
+    family: JetBrains Mono
+    style: Bold
+  italic:
+    family: JetBrains Mono
+    style: MediumItalic
+  bold_italic:
+    family: JetBrains Mono
+    style: BoldItalic
+  size: 12
+draw_bold_text_with_bright_colors: true
+
+live_config_reload: true
+# BEGIN ACE
+colors:
+  primary:
+    background: '#1c2523'
+    foreground: '#c5ddde'
+  cursor:
+    text:       '#1c2523'
+    cursor:     '#c5ddde'
+  normal:
+    black:      '#1c2523'
+    red:        '#5EA39F'
+    green:      '#4393BD'
+    yellow:     '#64C8A3'
+    blue:       '#499DC1'
+    magenta:    '#52AFC5'
+    cyan:       '#6EC9C9'
+    white:      '#c5ddde'
+  bright:
+    black:      '#899a9b'
+    red:        '#5EA39F'
+    green:      '#4393BD'
+    yellow:     '#64C8A3'
+    blue:       '#499DC1'
+    magenta:    '#52AFC5'
+    cyan:       '#6EC9C9'
+    white:      '#c5ddde'
+# END ACE

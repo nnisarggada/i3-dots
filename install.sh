@@ -3,19 +3,33 @@
 mkdir ~/Desktop
 mkdir ~/Pictures
 mkdir ~/Music
-mkdir ~/GitRepos
 mkdir ~/Downloads
 mkdir ~/.icons
 mkdir ~/.fonts
 
-yay -S autotiling bluez bluez-libs bluez-utils dunst git github-cli lxappearance papirus-icon-theme pavucontrol picom-jonaburg-git playerctl pulseaudio-bluetooth blueman qt5ct qt5-styleplugins rofi-bluetooth-git rofi-wifi-menu-git rofi-power-menu-git rofi-emoji gparted flameshot unzip copyq i3lock-fancy-git ranger polybar rofi xorg-xinput firefox fish kitty pcmanfm htop rxfetch brightnessctl ntfs-3g udisks2 gvfs ttf-ms-fonts bibata-cursor-theme neovim nodejs npm lua python-pillow zathura sweet-gtk-theme-dark polkit-gnome feh zscroll-git ttf-joypixels zathura-pdf-mupdf gtk-engine-murrine xclip python-pip
+cd
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd
+
+yay -S autotiling bluez bluez-libs bluez-utils dunst git github-cli lxappearance papirus-icon-theme pavucontrol picom-jonaburg-git playerctl blueman qt5ct qt5-styleplugins rofi-bluetooth-git rofi-wifi-menu-git rofi-power-menu-git rofi-emoji gparted flameshot unzip copyq i3lock-fancy-git polybar rofi xorg-xinput firefox zsh alacritty pcmanfm htop rxfetch brightnessctl ntfs-3g udisks2 gvfs ttf-ms-fonts bibata-cursor-theme neovim nodejs npm lua python-pillow zathura sweet-gtk-theme-dark polkit-gnome xwallpaper ttf-joypixels ttf-jetbrains-mono-nerd zathura-pdf-mupdf gtk-engine-murrine xclip python-pip python3-pywal mlocate
+
+pip install pywalfox
+pywalfox install
+
+sudo updatedb
 
 sudo cp -r ./.config/* ~/.config/
+sudo cp -r ./.oh-my-zsh/* ~/.oh-my-zsh/
+sudo cp -r ./alacritty-color-export/* ~/
 sudo cp -r ./.icons/* ~/.icons/
 sudo cp -r ./.fonts/* ~/.fonts/
+sudo cp -r ./.local/* ~/.local/
 sudo cp -r ./Pictures/* ~/Pictures/
 sudo cp -r ./Music/* ~/Music/
 sudo cp ./.vimrc ~/
+sudo cp ./.zshrc ~/
 sudo cp ./.viminfo ~/
 sudo cp ./.vimrc.plug ~/
 

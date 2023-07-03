@@ -1,6 +1,9 @@
 ## battery_detect_acpi.sh 
 
 #!/usr/bin/bash
+#
+
+. ~/.cache/wal/colors.sh
 
 
 # Getting the data and initializing an array.
@@ -21,13 +24,9 @@ fi
 
 # charging status with same background color
 if [[ $CHARGE -lt 20 ]]; then
-    FORMAT="%{B#181818}%{B#cccc0000}  "
-elif [[ $CHARGE -lt 30 ]]; then
-    FORMAT="%{B#181818}%{B#cc000000}  "
-elif [[ $CHARGE -lt 60 ]]; then
-    FORMAT="%{B#181818}%{B#cc000000}  "
+    FORMAT="%{B#000}%{B#cc0000}  "
 elif [[ $CHARGE -lt 100 ]]; then
-    FORMAT="%{B#181818}%{B#cc000000}  "
+    FORMAT="%{B$foreground}%{B$background}  "
 fi
 
 # Format charge & color depending on the status.

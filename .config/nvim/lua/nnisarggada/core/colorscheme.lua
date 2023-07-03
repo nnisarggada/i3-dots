@@ -1,5 +1,7 @@
-local status, _ = pcall(vim.cmd, "colorscheme nightfly")
+-- set colorscheme to nightfly with protected call
+-- in case it isn't installed
+local status, _ = pcall(vim.cmd, "colorscheme wal")
 if not status then
-	print("Colorscheme not found :/")
-	return
+  print("Colorscheme not found!") -- print error if colorscheme not installed
+  return
 end
