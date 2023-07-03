@@ -22,7 +22,7 @@ sudo updatedb
 
 cd ~/GitRepos/BnW-i3/
 sudo cp -r .config/* ~/.config/
-sudo cp -r .oh-my-zsh/* ~/.oh-my-zsh/
+# sudo cp -r .oh-my-zsh/* ~/.oh-my-zsh/
 sudo cp -r alacritty-color-export/ ~/
 sudo cp -r .icons/* ~/.icons/
 sudo cp -r .fonts/* ~/.fonts/
