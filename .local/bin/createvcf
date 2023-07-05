@@ -1,3 +1,0 @@
-#!/bin/sh
-
-awk -F',' 'NR>1 {print "BEGIN:VCARD\nFN:"$1"\nTEL:"$2"\nEMAIL:"$3"\nEND:VCARD"}' input.csv > output.vcf
