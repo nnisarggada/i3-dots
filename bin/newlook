@@ -1,0 +1,11 @@
+#!/bin/sh
+
+wall=$(find ~/Pictures/Wallpapers -type f -name "*.jpg" -o -name "*.png" | shuf -n 1)
+
+xwallpaper --zoom $wall
+
+wal -c
+wal -i $wall
+cp ~/.cache/wal/dunstrc ~/.config/dunst/dunstrc
+killall dunst
+dunst
