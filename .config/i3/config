@@ -169,7 +169,7 @@ bindsym $mod+v exec copyq show && i3-msg move position center
 
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always ~/.local/bin/newlook
-exec_always picom --experimental-backends
+exec_always picom
 exec_always ~/.config/polybar/launch.sh
 exec_always xclip
 exec_always killall copyq ; copyq
