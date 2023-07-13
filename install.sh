@@ -36,6 +36,7 @@ sudo cp .viminfo ~/
 sudo cp .vimrc.plug ~/
 
 sudo cp lightdm/* /etc/lightdm/
+sudo cp environment /etc/
 
 sudo chown $USER ~/ -R
 chsh -s /usr/bin/zsh
