@@ -14,9 +14,7 @@ bindsym $mod+Shift+Return exec ~/GitRepos/BnW-i3/alacritty-color-export/script.s
 bindsym $mod+q kill
 
 bindsym Mod1+space exec rofi -show drun -kb-cancel 'Alt-space'
-bindsym $mod+Shift+q exec ~/.local/bin/rofi-power
-bindsym $mod+Shift+w exec ~/.local/bin/rofi-wifi
-bindsym $mod+Shift+b exec ~/.local/bin/rofi-bluetooth
+bindsym $mod+Shift+q exec rofi -show power-menu -modi power-menu:rofi-power-menu
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
