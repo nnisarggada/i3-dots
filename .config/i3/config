@@ -112,13 +112,13 @@ client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status && notify-send "Volume $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')"
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status && notify-send "Volume $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')"
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status && notify-send "Volume Muted"
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status && notify-send "Mic Muted"
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym XF86MonBrightnessUp exec brightnessctl set +5% && notify-send "Brightness $(brightnessctl g percentage)"
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%- && notify-send "Brightness $(brightnessctl g percentage)"
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 bindsym XF86TouchpadToggle exec ~/.config/toggletouchpad.sh
 
