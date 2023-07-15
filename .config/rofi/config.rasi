@@ -4,7 +4,7 @@ configuration{
     font: "JetBrains Mono Nerd Font 16";
     show-icons: true;
     icon-theme: "ePapirus-Dark";
-    terminal: "kitty";
+    terminal: "alacritty";
     drun-display-format: "{icon} {name}";
     disable-history: false;
     display-drun: "   Apps ";
