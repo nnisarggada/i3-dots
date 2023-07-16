@@ -8,6 +8,7 @@ mkdir ~/.icons
 mkdir ~/.fonts
 mkdir ~/.local
 mkdir ~/.local/bin
+mkdir ~/.cache/zsh
 
 cd
 git clone https://aur.archlinux.org/yay-bin.git
