@@ -22,8 +22,8 @@ configuration{
     selected-normal-foreground: @background;
 
     background-color: @background;
-    background: #0d0d12;
-    foreground: #d3d4e6;
+    background: #000000;
+    foreground: #cad5ff;
     border-color: @background;
     spacing: 2;
 }
