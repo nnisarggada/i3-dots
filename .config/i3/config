@@ -132,7 +132,6 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always autotiling
 
 gaps inner 10
-gaps top 35
 
 for_window [urgent=latest] focus
 for_window [all] border pixel 2
@@ -169,8 +168,8 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+v exec copyq show && i3-msg move position center
 
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always picom
 exec_always feh --bg-fill ~/Pictures/Wallpapers/lowpoly_street.png
+exec_always picom
 exec_always polybar
 exec_always xclip
 exec_always killall copyq ; copyq
