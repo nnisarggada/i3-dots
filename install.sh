@@ -6,6 +6,8 @@ mkdir ~/Music
 mkdir ~/Downloads
 mkdir ~/.icons
 mkdir ~/.fonts
+mkdir ~/.local
+mkdir ~/.local/bin
 
 cd
 git clone https://aur.archlinux.org/yay-bin.git
@@ -17,6 +19,7 @@ yay -S ncdu autotiling bluez bluez-libs bluez-utils dunst git github-cli lxappea
 
 cd ~/GitRepos/BnW-i3/
 sudo cp -r .config/* ~/.config/
+sudo cp -r .local/bin/* ~/.local/
 sudo cp -r .icons/* ~/.icons/
 sudo cp -r .fonts/* ~/.fonts/
 sudo cp -r Pictures/* ~/Pictures/
