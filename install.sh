@@ -6,9 +6,6 @@ mkdir ~/Music
 mkdir ~/Downloads
 mkdir ~/.icons
 mkdir ~/.fonts
-mkdir ~/.local
-mkdir ~/.local/bin
-mkdir ~/.cache/zsh
 
 cd
 git clone https://aur.archlinux.org/yay-bin.git
@@ -16,18 +13,12 @@ cd yay-bin
 makepkg -si
 cd
 
-yay -S ncdu autotiling bluez bluez-libs bluez-utils dunst git github-cli lxappearance papirus-icon-theme pavucontrol picom playerctl blueman qt5ct qt5-styleplugins rofi-emoji rofi-power-menu-git gparted flameshot unzip copyq i3lock-fancy-git polybar rofi xorg-xinput firefox zsh alacritty pcmanfm htop neofetch brightnessctl ntfs-3g udisks2 gvfs ttf-ms-fonts bibata-cursor-theme neovim nodejs npm lua python-pillow zathura sweet-gtk-theme-dark polkit-gnome xwallpaper ttf-joypixels ttf-jetbrains-mono-nerd zathura-pdf-mupdf gtk-engine-murrine xclip python-pip python-pywal python-pywalfox mlocate zsh-syntax-highlighting libnotify jq acpi sxiv webapp-manager
-
-cd
-sudo pywalfox install
-sudo updatedb
+yay -S ncdu autotiling bluez bluez-libs bluez-utils dunst git github-cli lxappearance papirus-icon-theme pavucontrol picom playerctl blueman qt5ct qt5-styleplugins rofi-emoji rofi-power-menu-git gparted flameshot unzip copyq i3lock-fancy-git polybar rofi xorg-xinput firefox zsh alacritty pcmanfm htop neofetch brightnessctl ntfs-3g udisks2 gvfs ttf-ms-fonts bibata-cursor-theme neovim nodejs npm lua python-pillow zathura sweet-gtk-theme-dark polkit-gnome feh ttf-joypixels ttf-jetbrains-mono-nerd zathura-pdf-mupdf gtk-engine-murrine xclip python-pip mlocate zsh-syntax-highlighting libnotify jq acpi sxiv webapp-manager
 
 cd ~/GitRepos/BnW-i3/
 sudo cp -r .config/* ~/.config/
-sudo cp -r alacritty-color-export/ ~/
 sudo cp -r .icons/* ~/.icons/
 sudo cp -r .fonts/* ~/.fonts/
-sudo cp -r .local/bin ~/.local/
 sudo cp -r Pictures/* ~/Pictures/
 sudo cp -r Music/* ~/Music/
 sudo cp .vimrc ~/
