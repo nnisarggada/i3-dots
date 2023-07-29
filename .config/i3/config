@@ -170,6 +170,6 @@ bindsym $mod+v exec copyq show && i3-msg move position center
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always feh --bg-fill ~/Pictures/Wallpapers/lowpoly_street.png
 exec_always picom
-exec_always polybar
 exec_always xclip
 exec_always killall copyq ; copyq
+exec_always killall polybar ; polybar
