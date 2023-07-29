@@ -8,8 +8,8 @@ exec  nm-applet
 
 floating_modifier $mod
 
-bindsym $mod+Return exec ~/GitRepos/BnW-i3/alacritty-color-export/script.sh && alacritty
-bindsym $mod+Shift+Return exec ~/GitRepos/BnW-i3/alacritty-color-export/script.sh && alacritty --class floating
+bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec alacritty
 
 bindsym $mod+q kill
 
@@ -101,16 +101,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
-set_from_resource $color1 i3wm.color1 #f0f0f0
+set $bg-color 	                #cad5ff
+set $inactive-bg-color          #0c0c1e
+set $text-color                 #cdd6f4
+set $inactive-text-color        #a6adc8
+set $urgent-bg-color            #ff4151
 
-# class                 border  backgr. text indicator child_border
-client.focused          $color1     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color            $bg-color           $text-color          $bg-color
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $inactive-bg-color
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
@@ -130,6 +132,7 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always autotiling
 
 gaps inner 10
+gaps top 35
 
 for_window [urgent=latest] focus
 for_window [all] border pixel 2
@@ -166,8 +169,8 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+v exec copyq show && i3-msg move position center
 
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always ~/.local/bin/newlook
 exec_always picom
-exec_always ~/.config/polybar/launch.sh
+exec_always feh --bg-fill ~/Pictures/Wallpapers/lowpoly_street.png
+exec_always polybar
 exec_always xclip
 exec_always killall copyq ; copyq
