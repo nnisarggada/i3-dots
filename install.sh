@@ -19,7 +19,7 @@ yay -S ncdu autotiling bluez bluez-libs bluez-utils dunst git github-cli lxappea
 
 cd ~/GitRepos/BnW-i3/
 sudo cp -r .config/* ~/.config/
-sudo cp -r .local/bin/* ~/.local/
+sudo cp -r .local/bin/* ~/.local/bin/
 sudo cp -r .icons/* ~/.icons/
 sudo cp -r .fonts/* ~/.fonts/
 sudo cp -r Pictures/* ~/Pictures/
@@ -29,7 +29,7 @@ sudo cp .zshrc ~/
 sudo cp .viminfo ~/
 sudo cp .vimrc.plug ~/
 
-sudo cp lightdm/* /etc/lightdm/
+sudo cp ly/* /etc/ly/
 sudo cp environment /etc/
 
 sudo chown $USER ~/ -R
