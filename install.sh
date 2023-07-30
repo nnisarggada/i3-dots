@@ -15,7 +15,7 @@ cd yay-bin
 makepkg -si
 cd
 
-yay -S ncdu autotiling bluez bluez-libs bluez-utils dunst git github-cli lxappearance papirus-icon-theme pavucontrol picom playerctl blueman qt5ct qt5-styleplugins rofi-emoji rofi-power-menu-git gparted flameshot unzip copyq i3lock-fancy-git polybar rofi xorg-xinput firefox zsh alacritty pcmanfm htop neofetch brightnessctl ntfs-3g udisks2 gvfs ttf-ms-fonts bibata-cursor-theme neovim nodejs npm lua python-pillow zathura sweet-gtk-theme-dark polkit-gnome feh ttf-joypixels ttf-jetbrains-mono-nerd zathura-pdf-mupdf gtk-engine-murrine xclip python-pip mlocate zsh-syntax-highlighting libnotify jq acpi sxiv webapp-manager
+yay -S ncdu autotiling bluez bluez-libs bluez-utils dunst git github-cli lxappearance papirus-icon-theme pavucontrol picom playerctl blueman qt5ct qt5-styleplugins rofi-emoji rofi-power-menu-git gparted flameshot unzip copyq i3lock-fancy-git polybar rofi xorg-xinput firefox zsh alacritty pcmanfm htop neofetch brightnessctl ntfs-3g udisks2 gvfs ttf-ms-fonts bibata-cursor-theme neovim nodejs npm lua python-pillow zathura sweet-gtk-theme-dark polkit-gnome feh ttf-joypixels ttf-jetbrains-mono-nerd zathura-pdf-mupdf gtk-engine-murrine xclip python-pip mlocate zsh-syntax-highlighting libnotify jq acpi sxiv webapp-manager ly
 
 cd ~/GitRepos/BnW-i3/
 sudo cp -r .config/* ~/.config/
@@ -34,3 +34,9 @@ sudo cp environment /etc/
 
 sudo chown $USER ~/ -R
 chsh -s /usr/bin/zsh
+
+sudo systemctl disable lightdm
+sudo systemctl enable ly
+
+sudo rm -rf /etc/lightdm/
+yay -R lightdm lightdm-gtk-greeter
