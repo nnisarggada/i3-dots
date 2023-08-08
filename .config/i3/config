@@ -2,9 +2,9 @@ set $mod Mod4
 
 font JetBrains Mono 12
 
-exec dex --autostart --environment i3
+exec --no-startup-id dex --autostart --environment i3
 
-exec  nm-applet
+exec --no-startup-id nm-applet
 
 floating_modifier $mod
 
@@ -129,9 +129,10 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-exec_always autotiling
+exec_always --no-startup-id autotiling
 
 gaps inner 10
+smart_gaps on
 
 for_window [urgent=latest] focus
 for_window [all] border pixel 2
@@ -150,11 +151,11 @@ for_window [class="qBittorrent"] floating enable
 for_window [class="csgo_linux64"] move to workspace $ws9
 
 
-exec_always libinput-gestures-setup start
-exec_always xinput set-prop "SYNA328B:00 06CB:CD50 Touchpad" "libinput Tapping Enabled" 1
-exec_always xinput set-prop "SYNA328B:00 06CB:CD50 Touchpad" "libinput Natural Scrolling Enabled" 1
-exec_always xmodmap -e "clear lock"
-exec_always xmodmap -e "keysym Caps_Lock = BackSpace" 
+exec_always --no-startup-id libinput-gestures-setup start
+exec_always --no-startup-id xinput set-prop "SYNA328B:00 06CB:CD50 Touchpad" "libinput Tapping Enabled" 1
+exec_always --no-startup-id xinput set-prop "SYNA328B:00 06CB:CD50 Touchpad" "libinput Natural Scrolling Enabled" 1
+exec_always --no-startup-id xmodmap -e "clear lock"
+exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = BackSpace" 
 bindsym $mod+Mod1+l exec i3lock-fancy -g && playerctl pause
 bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
@@ -167,9 +168,9 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+v exec copyq show && i3-msg move position center
 
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always ~/.local/bin/changewall
-exec_always picom
-exec_always xclip
-exec_always killall copyq ; copyq
-exec_always killall polybar ; polybar
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always --no-startup-id ~/.local/bin/changewall
+exec_always --no-startup-id picom --experimental-backends
+exec_always --no-startup-id xclip
+exec_always --no-startup-id killall copyq ; copyq
+exec_always --no-startup-id killall polybar ; polybar
