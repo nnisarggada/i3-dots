@@ -29,12 +29,8 @@ sudo cp .zshrc ~/
 sudo cp .viminfo ~/
 sudo cp .vimrc.plug ~/
 
+sudo cp lightdm/* /etc/lightdm/
 sudo cp environment /etc/
 
 sudo chown $USER ~/ -R
 chsh -s /usr/bin/zsh
-
-sudo systemctl disable lightdm
-
-sudo rm -rf /etc/lightdm/
-yay -R lightdm lightdm-gtk-greeter
