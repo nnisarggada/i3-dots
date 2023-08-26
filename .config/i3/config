@@ -4,7 +4,7 @@ font JetBrains Mono 12
 
 exec --no-startup-id dex --autostart --environment i3
 
-exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet &
 
 floating_modifier $mod
 
@@ -117,7 +117,9 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym $mod+Shift+o exec pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym $mod+Shift+m exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
@@ -128,8 +130,6 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-
-exec_always --no-startup-id autotiling
 
 gaps inner 10
 smart_gaps on
@@ -168,9 +168,10 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+v exec copyq show && i3-msg move position center
 
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always --no-startup-id ~/.local/bin/changewall
-exec_always --no-startup-id picom --experimental-backends
-exec_always --no-startup-id xclip
-exec_always --no-startup-id killall copyq ; copyq
-exec_always --no-startup-id killall polybar ; polybar
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec_always --no-startup-id autotiling &
+exec_always --no-startup-id feh --bg-fill Pictures/Wallpapers/what-will-you-say-today.jpg
+exec_always --no-startup-id picom &
+exec_always --no-startup-id xclip &
+exec_always --no-startup-id killall copyq ; copyq &
+exec_always --no-startup-id killall polybar ; polybar &
