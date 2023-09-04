@@ -1,16 +1,15 @@
 configuration{
-    modi: "run,drun,window";
-    lines: 5;
+    modi: "drun";
+    fixed-num-lines: true;
     font: "JetBrains Mono Nerd Font 16";
     show-icons: true;
     icon-theme: "ePapirus-Dark";
     terminal: "alacritty";
     drun-display-format: "{icon} {name}";
     disable-history: false;
-    display-drun: "   Apps ";
-    display-run: "   Run ";
-    display-window: " 﩯  Windows ";
-    display-Network: " 󰤨  Network ";
+    display-drun: "Apps";
+    display-emoji: "Emojis";
+    display-calc: "Calculate";
 }
 
 * {
@@ -22,7 +21,7 @@ configuration{
     selected-normal-foreground: @background;
 
     background-color: @background;
-    background: #000000;
+    background: #0e0e0e;
     foreground: #cad5ff;
     border-color: @background;
     spacing: 2;
@@ -31,6 +30,7 @@ configuration{
 #window {
     background-color: @background;
     border: 0;
+    border-radius: 10px;
     padding: 2.5ch;
 }
 
@@ -61,17 +61,16 @@ configuration{
 }
 
 #listview {
-    fixed-height: 0;
+    lines: 7;
     border: 2px 0px 0px;
     border-color: @border-color;
     spacing: 2px;
-    scrollbar: true;
-    padding: 2px 0px 0px;
+    scrollbar: false;
 }
 
 #element {
     border: 0;
-    padding: 1px;
+    padding: 10px;
 }
 
 #element.normal.normal {
@@ -92,16 +91,19 @@ configuration{
 #element.selected.normal {
     background-color: @selected-normal-background;
     text-color: @selected-normal-foreground;
+    border-radius: 10px;
 }
 
 #element.selected.urgent {
     background-color: @selected-urgent-background;
     text-color: @selected-urgent-foreground;
+    border-radius: 10px;
 }
 
 #element.selected.active {
     background-color: @selected-active-background;
     text-color: @selected-active-foreground;
+    border-radius: 10px;
 }
 
 #element.alternate.normal {
@@ -143,7 +145,7 @@ configuration{
 #inputbar {
     spacing: 0;
     text-color: @normal-foreground;
-    padding: 1px;
+    padding: 10px;
 }
 
 #case-indicator {

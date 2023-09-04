@@ -132,10 +132,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 gaps inner 10
-smart_gaps on
 
 for_window [urgent=latest] focus
-for_window [all] border pixel 2
+for_window [all] border pixel 3
+for_window [all] border radius 3
 for_window [all] title_format " "
 for_window [class="floating"] floating enable
 for_window [class="Pavucontrol"] floating enable
@@ -156,11 +156,12 @@ exec_always --no-startup-id xinput set-prop "SYNA328B:00 06CB:CD50 Touchpad" "li
 exec_always --no-startup-id xinput set-prop "SYNA328B:00 06CB:CD50 Touchpad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xmodmap -e "clear lock"
 exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = BackSpace" 
-bindsym $mod+Mod1+l exec i3lock-fancy -g && playerctl pause
+bindsym $mod+Mod1+l exec betterlockscreen -l --time-format "%H:%M %p" && playerctl pause
 bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
 bindsym $mod+c exec i3-msg move position center
 bindsym $mod+period exec rofi -show emoji
+bindsym $mod+comma exec rofi -show calc
 bindsym Print exec flameshot gui 
 bindsym $mod+Ctrl+Shift+s exec flameshot gui 
 bindsym $mod+z exec polybar-msg cmd toggle
@@ -171,7 +172,9 @@ bindsym $mod+v exec copyq show && i3-msg move position center
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec_always --no-startup-id autotiling &
 exec_always --no-startup-id feh --bg-fill Pictures/Wallpapers/what-will-you-say-today.jpg
+exec_always --no-startup-id betterlockscreen -u Pictures/Wallpapers/what-will-you-say-today.jpg
 exec_always --no-startup-id picom &
 exec_always --no-startup-id xclip &
 exec_always --no-startup-id killall copyq ; copyq &
 exec_always --no-startup-id killall polybar ; polybar &
+exec_always --no-startup-id udiskie &
