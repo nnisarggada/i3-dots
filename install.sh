@@ -48,7 +48,5 @@ sudo cp .vimrc.plug ~/
 sudo cp -r lightdm /etc/
 sudo cp environment /etc/
 
-betterlockscreen -u ~/Pictures/Wallpapers/what-will-you-say-today.jpg
-
 sudo chown $USER ~/ -R
 chsh -s /usr/bin/zsh
