@@ -10,7 +10,7 @@ icon_path='/usr/share/icons/Papirus-Dark/16x16/panel/'
 sink_tag="string:x-dunst-stack-tag:sink"
 source_tag="string:x-dunst-stack-tag:source"
 
-vol_max=153
+vol_max=100
 
 function sink_notification {
 	sink_muted=$(pactl get-sink-mute $sink_name | awk '{print $2}')
