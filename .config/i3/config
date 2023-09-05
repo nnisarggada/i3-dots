@@ -172,7 +172,6 @@ bindsym $mod+v exec copyq show && i3-msg move position center
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec_always --no-startup-id autotiling &
 exec_always --no-startup-id feh --bg-fill Pictures/Wallpapers/what-will-you-say-today.jpg
-exec_always --no-startup-id betterlockscreen -u Pictures/Wallpapers/what-will-you-say-today.jpg
 exec_always --no-startup-id picom &
 exec_always --no-startup-id xclip &
 exec_always --no-startup-id killall copyq ; copyq &
