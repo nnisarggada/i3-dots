@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# By abxh (github)
-
 lock="/tmp/dunstify_bat.lock"
 tag="string:x-dunst-stack-tag:battery"
 icon="/usr/share/icons/Papirus-Dark/16x16/panel/battery-010.svg"
@@ -9,17 +7,14 @@ icon="/usr/share/icons/Papirus-Dark/16x16/panel/battery-010.svg"
 while true
 do
 capacity=$(cat /sys/class/power_supply/BAT0/capacity)
-ac_state=$(cat /sys/class/power_supply/AC/online)
+ac_state=$(cat /sys/class/power_supply/ADP1/online)
 
-if [[ "$capacity" -le 15 && "$ac_state" == "0" ]] ; then
+if [[ "$capacity" -le 20 && "$ac_state" == "0" ]] ; then
 	dunstify -h $tag \
 		 -u critical \
 		 -i "$icon" \
 		 "Warning" \
 		 "Battery is getting low!"
-	sleep 9
+	sleep 60s
 fi
-
-echo "$capacity"
-	sleep 1
 done

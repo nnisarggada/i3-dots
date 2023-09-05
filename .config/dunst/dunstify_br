@@ -6,9 +6,9 @@ tag="string:x-dunst-stack-tag:brightness"
 icon="/usr/share/icons/Papirus-Dark/16x16/actions/brightnesssettings.svg"
 path="/sys/class/backlight/amdgpu_bl1/"
 
-raw_val=$(< $path/brightness)
+raw_val=$(brightnessctl g)
 min_val=0
-max_val=$(< $path/max_brightness)
+max_val=$(brightnessctl m)
 
 notify() {
 	val=$((raw_val * 100 / 255))
@@ -17,21 +17,16 @@ notify() {
 		 -h $tag\
 		 -u low\
 		 -i "$icon"\
-		 "Brightness:"\
-		 "$raw_val"
+		 "Brightness:"
 }
 
 case "$1" in
 --inc|-i)
-	new_val=$((raw_val + $2))
-	raw_val=$((new_val < max_val ? new_val : max_val ))
-	echo $raw_val > $path/brightness
+  brightnessctl s +5%
 	notify
 	;;
 --dec|-d)
-	new_val=$((raw_val - $2))
-	raw_val=$((new_val > min_val ? new_val : min_val ))
-	echo $raw_val > $path/brightness
+  brightnessctl s 5%-
 	notify
 	;;
 --get|-g)
@@ -40,8 +35,8 @@ case "$1" in
 *)
 	echo "Usage: [SCRIPT] [COMMAND] [VALUE]"
 	echo "Commands:"
-	echo "  --inc/-i:			Increase brightness by raw value."
-	echo "  --dec/-d:			Decrease brightness by raw value."
+	echo "  --inc/-i:			Increase brightness."
+	echo "  --dec/-d:			Decrease brightness."
 	echo "  --get/-g:			Get brightness by raw value."
 	;;
 esac

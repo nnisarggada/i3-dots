@@ -121,8 +121,8 @@ bindsym $mod+Shift+o exec ~/.config/dunst/dunstify_vol -t
 bindsym XF86AudioMicMute exec ~/.config/dunst/dunstify_vol -y
 bindsym $mod+Shift+m exec ~/.config/dunst/dunstify_vol -y
 
-bindsym XF86MonBrightnessUp exec ~/.config/dunst/dunstify_br -i 5
-bindsym XF86MonBrightnessDown exec ~/.config/dunst/dunstify_br -d 5
+bindsym XF86MonBrightnessUp exec ~/.config/dunst/dunstify_br -i
+bindsym XF86MonBrightnessDown exec ~/.config/dunst/dunstify_br -d
 
 bindsym XF86TouchpadToggle exec ~/.config/toggletouchpad.sh
 
@@ -177,3 +177,4 @@ exec_always --no-startup-id xclip &
 exec_always --no-startup-id killall copyq ; copyq &
 exec_always --no-startup-id killall polybar ; polybar &
 exec_always --no-startup-id udiskie &
+exec_always --no-startup-id ~/.config/dunst/dunstify_bat &
