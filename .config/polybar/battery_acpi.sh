@@ -20,13 +20,9 @@ fi
 
 
 # charging status with same background color
-if [[ $CHARGE -lt 20 ]]; then
+if [[ $CHARGE -le 20 ]]; then
     FORMAT="%{B#181818}%{B#cc0000}  "
-elif [[ $CHARGE -lt 30 ]]; then
-    FORMAT="%{B#181818}%{B#000000}  "
-elif [[ $CHARGE -lt 60 ]]; then
-    FORMAT="%{B#181818}%{B#000000}  "
-elif [[ $CHARGE -lt 100 ]]; then
+else
     FORMAT="%{B#181818}%{B#000000}  "
 fi
 
