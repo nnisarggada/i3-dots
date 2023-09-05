@@ -6,32 +6,37 @@ tag="string:x-dunst-stack-tag:brightness"
 icon="/usr/share/icons/Papirus-Dark/16x16/actions/brightnesssettings.svg"
 path="/sys/class/backlight/amdgpu_bl1/"
 
-raw_val=$(brightnessctl g)
-max_val=$(brightnessctl m)
-percent=$(( (raw_val * 100) / max_val ))
-echo "Current brightness: $percent%"
 
 notify() {
-	val=$percent
-	dunstify -h int:value:$val\
+  value="$1"
+	dunstify -h int:value:$percent\
 		 -h string:hlcolor:"#cad5ff"\
 		 -h $tag\
 		 -u low\
 		 -i "$icon"\
 		 "Brightness:"\
-     "$val%"
+     "$percent%"
 }
 
 case "$1" in
 --inc|-i)
   brightnessctl s +5%
-	notify
+  raw_val=$(brightnessctl g)
+  max_val=$(brightnessctl m)
+  percent=$(( (raw_val * 100) / max_val ))
+  notify 
 	;;
 --dec|-d)
   brightnessctl s 5%-
+  raw_val=$(brightnessctl g)
+  max_val=$(brightnessctl m)
+  percent=$(( (raw_val * 100) / max_val ))
 	notify
 	;;
 --get|-g)
+  raw_val=$(brightnessctl g)
+  max_val=$(brightnessctl m)
+  percent=$(( (raw_val * 100) / max_val ))
 	echo $percent
 	;;
 *)
