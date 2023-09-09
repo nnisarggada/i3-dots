@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 
-# Check if there is a battery on the device
-if acpi -b >/dev/null 2>&1; then
-    # Getting the data and initializing an array.
-    BATTERY_INFO=($(acpi | awk -F',' '{ print $0 }'))
+# Getting the data and initializing an array.
+BATTERY_INFO=($(acpi 2>/dev/null | awk -F',' '{ print $0 }'))
 
+# Check if battery information is available
+if [ -n "$BATTERY_INFO" ]; then
     # Formatting helpers
     CHARGE=$((${BATTERY_INFO[3]//%,}))
     ICON=""
@@ -17,7 +17,7 @@ if acpi -b >/dev/null 2>&1; then
         ICON=""
     fi
 
-    # charging status with the same background color
+    # Charging status with the same background color
     if [[ $CHARGE -le 20 ]]; then
         FORMAT="%{B#181818}%{B#cc0000}  "
     else
@@ -30,6 +30,6 @@ if acpi -b >/dev/null 2>&1; then
     # Display on the bar
     echo $FORMAT
 else
-    # No battery found, so echo an empty string
+    # No battery information available, so echo an empty string
     echo ""
 fi
