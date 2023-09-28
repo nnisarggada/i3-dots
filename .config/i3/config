@@ -142,6 +142,7 @@ for_window [all] border radius 3
 for_window [all] title_format " "
 for_window [class="floating"] floating enable
 for_window [class="Pavucontrol"] floating enable
+for_window [class="missioncenter"] floating enable
 for_window [class="copyq"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Lxappearance"] floating enable

@@ -48,5 +48,7 @@ sudo cp .vimrc.plug ~/
 sudo cp -r lightdm /etc/
 sudo cp environment /etc/
 
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
 sudo chown $USER ~/ -R
 chsh -s /usr/bin/zsh
