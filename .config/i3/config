@@ -160,7 +160,7 @@ exec_always --no-startup-id xinput set-prop "SYNA328B:00 06CB:CD50 Touchpad" "li
 exec_always --no-startup-id xinput set-prop "SYNA328B:00 06CB:CD50 Touchpad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xmodmap -e "clear lock"
 exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = BackSpace" 
-bindsym $mod+Mod1+l exec betterlockscreen -l --time-format "%H:%M %p" && playerctl pause
+bindsym $mod+Mod1+l exec betterlockscreen -l --time-format "%I:%M %p" && playerctl pause
 bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
 bindsym $mod+c exec i3-msg move position center
