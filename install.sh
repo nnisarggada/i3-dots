@@ -49,6 +49,7 @@ sudo cp -r lightdm /etc/
 sudo cp environment /etc/
 
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+sudo usermod -aG input $USER
 
 sudo chown $USER ~/ -R
 chsh -s /usr/bin/zsh
