@@ -51,5 +51,10 @@ sudo usermod -aG input $USER
 systemctl --user enable mpd
 sudo systemctl enable bluetooth
 
+sudo npm i -g pnpm
+pnpm setup
+source ~/.zshrc
+pnpm i -g pnpm
+
 sudo chown $USER ~/ -R
 chsh -s /usr/bin/zsh
