@@ -6,7 +6,7 @@ configuration{
     icon-theme: "Papirus-Dark";
     terminal: "alacritty";
     drun-display-format: "{icon} {name}";
-    disable-history: false;
+    disable-history: true;
     display-drun: "Apps";
     display-emoji: "Emojis";
     display-calc: "Calculate";
