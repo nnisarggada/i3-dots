@@ -1,9 +1,9 @@
 configuration{
     modi: "drun";
     fixed-num-lines: true;
-    font: "JetBrains Mono Nerd Font 16";
+    font: "JetBrains Mono Nerd Font 14";
     show-icons: true;
-    icon-theme: "ePapirus-Dark";
+    icon-theme: "Papirus-Dark";
     terminal: "alacritty";
     drun-display-format: "{icon} {name}";
     disable-history: false;
@@ -21,28 +21,32 @@ configuration{
     selected-normal-foreground: @background;
 
     background-color: @background;
-    background: #0e0e0e;
-    foreground: #cad5ff;
-    border-color: @background;
+    background: #000000aa;
+    foreground: #ffffff;
+    border-color: #ffffff;
     spacing: 2;
 }
 
 #window {
     background-color: @background;
     border: 0;
-    border-radius: 10px;
-    padding: 2.5ch;
+    border-radius: 0;
+    padding: 390px 600px;
+    width: 100%;
+    height: 100%;
 }
 
 #mainbox {
-    border: 0;
+    border: 2px;
+    border-color: @border-color;
     padding: 0;
+    background-color: #000;
 }
 
 #message {
     border: 2px 0px 0px;
     border-color: @border-color;
-    padding: 1px;
+    padding: 10px;
 }
 
 #textbox {
@@ -61,7 +65,7 @@ configuration{
 }
 
 #listview {
-    lines: 7;
+    lines: 4;
     border: 2px 0px 0px;
     border-color: @border-color;
     spacing: 2px;
@@ -91,7 +95,7 @@ configuration{
 #element.selected.normal {
     background-color: @selected-normal-background;
     text-color: @selected-normal-foreground;
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 #element.selected.urgent {
@@ -103,7 +107,7 @@ configuration{
 #element.selected.active {
     background-color: @selected-active-background;
     text-color: @selected-active-foreground;
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 #element.alternate.normal {
