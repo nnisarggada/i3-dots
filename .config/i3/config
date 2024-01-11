@@ -104,10 +104,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color 	                #cad5ff
+set $bg-color 	                #ffffff
 set $inactive-bg-color          #0c0c1e
-set $text-color                 #cdd6f4
-set $inactive-text-color        #a6adc8
+set $text-color                 #ffffff
+set $inactive-text-color        #ffffff
 set $urgent-bg-color            #ff4151
 
 # window colors
@@ -137,8 +137,8 @@ bindsym XF86AudioPrev exec playerctl previous
 gaps inner 10
 
 for_window [urgent=latest] focus
-for_window [all] border pixel 3
-for_window [all] border radius 3
+for_window [all] border pixel 2
+for_window [all] border radius 0
 for_window [all] title_format " "
 for_window [class="floating"] floating enable
 for_window [class="Pavucontrol"] floating enable
@@ -166,14 +166,15 @@ bindsym $mod+e exec pcmanfm
 bindsym $mod+c exec i3-msg move position center
 bindsym $mod+period exec rofi -show emoji
 bindsym $mod+comma exec rofi -show calc
-bindsym Print exec flameshot gui 
-bindsym $mod+Ctrl+Shift+s exec flameshot gui 
+bindsym Print exec flameshot gui
+bindsym $mod+Ctrl+Shift+s exec flameshot gui
 bindsym $mod+z exec polybar-msg cmd toggle
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+v exec copyq show && i3-msg move position center
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec --no-startup-id ~/.config/dunst/dunstify_bat &
 exec_always --no-startup-id autotiling &
 exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/what-will-you-say-today.jpg &
 exec_always --no-startup-id betterlockscreen -u ~/Pictures/Wallpapers/what-will-you-say-today.jpg &
@@ -182,5 +183,4 @@ exec_always --no-startup-id xclip &
 exec_always --no-startup-id killall copyq ; copyq &
 exec_always --no-startup-id killall polybar ; polybar &
 exec_always --no-startup-id udiskie &
-exec_always --no-startup-id ~/.config/dunst/dunstify_bat &
 exec_always --no-startup-id ~/.local/bin/check_updates &

@@ -29,11 +29,11 @@ function sink_notification {
         fi
 
 	dunstify -h int:value:$(( $sink_volume*100/$vol_max)) \
-		 -h string:hlcolor:"#cad5ff" \
+		 -h string:hlcolor:"#ffffff" \
                  -u low \
                  -h $sink_tag \
                  -i "$sink_icon" \
-                 "Volume:" \
+                 "Volume" \
                  "$sink_volume%"
 }
 
