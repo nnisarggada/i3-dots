@@ -43,6 +43,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+x layout toggle split
 
 bindsym $mod+Shift+space floating toggle
+bindsym $mod+p sticky toggle
 
 bindsym $mod+space focus mode_toggle
 
