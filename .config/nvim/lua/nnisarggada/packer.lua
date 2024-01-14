@@ -4,57 +4,70 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- packer
-  use 'wbthomason/packer.nvim'
+    -- packer
+    use 'wbthomason/packer.nvim'
 
-  -- telescope
-  use {
-	  'nvim-telescope/telescope.nvim',
-	  requires = {{ 'nvim-lua/plenary.nvim' }}
-  }
+    -- telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 
-  -- tokyodark
-  use ({
-	  'tiagovla/tokyodark.nvim',
-	  config = function()
-		  vim.cmd('colorscheme tokyodark')
-	  end
-  })
+    -- tokyodark
+    use({
+        'tiagovla/tokyodark.nvim',
+        config = function()
+            vim.cmd('colorscheme tokyodark')
+        end
+    })
 
-  -- transparent
-  use 'xiyaowong/transparent.nvim'
+    -- transparent
+    use 'xiyaowong/transparent.nvim'
 
-  -- treesitter
-  use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    -- treesitter
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
-  -- harpoon
-  use 'theprimeagen/harpoon'
+    -- harpoon
+    use 'theprimeagen/harpoon'
 
-  -- undotree
-  use 'mbbill/undotree'
+    -- undotree
+    use 'mbbill/undotree'
 
-  -- lsp-zero
-  use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  requires = {
-		  { 'neovim/nvim-lspconfig' },
-		  { 'williamboman/mason.nvim' },
-		  { 'williamboman/mason-lspconfig.nvim' },
-		  { 'hrsh7th/nvim-cmp' },
-		  { 'hrsh7th/cmp-nvim-lsp' },
-		  { 'hrsh7th/cmp-buffer' },
-		  { 'hrsh7th/cmp-path' },
-		  { 'saadparwaiz1/cmp_luasnip' },
-		  { 'hrsh7th/cmp-nvim-lua' },
-		  { 'L3MON4D3/LuaSnip' },
-		  { 'rafamadriz/friendly-snippets' },
-	  }
-  }
+    -- lsp-zero
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        requires = {
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lua' },
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
+        }
+    }
 
-  -- nvim-tree
-  use {
-      'nvim-tree/nvim-tree.lua',
-      requires = {{ 'nvim-tree/nvim-web-devicons' }}
-  }
+    -- nvim-tree
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = { { 'nvim-tree/nvim-web-devicons' } }
+    }
 
+    -- codeium
+    use {
+        'Exafunction/codeium.vim',
+        config = function()
+            -- Change '<C-g>' here to any keycode you like.
+            vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+            vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end,
+                { expr = true, silent = true })
+            vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end,
+                { expr = true, silent = true })
+            vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+        end
+    }
 end)
