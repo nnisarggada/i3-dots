@@ -13,7 +13,7 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 -- autocommand that reloads neovim and installs/updates/removes plugins
 -- when file is saved
-vim.cmd([[ 
+vim.cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
@@ -33,11 +33,17 @@ return packer.startup(function(use)
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-  use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
-
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
   use("szw/vim-maximizer") -- maximizes and restores current window
+
+  -- tokyodark
+  use({
+    "tiagovla/tokyodark.nvim",
+    config = function()
+      vim.cmd("colorscheme tokyodark")
+    end,
+  })
 
   -- essential plugins
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
@@ -117,9 +123,6 @@ return packer.startup(function(use)
 
   -- colorizer
   use("chrisbra/Colorizer")
-
-  -- formatter
-  use("mhartington/formatter.nvim")
 
   -- indent line
   use("lukas-reineke/indent-blankline.nvim")

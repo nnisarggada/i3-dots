@@ -1,7 +1,6 @@
 require("nnisarggada.plugins-setup")
 require("nnisarggada.core.options")
 require("nnisarggada.core.keymaps")
-require("nnisarggada.core.colorscheme")
 require("nnisarggada.plugins.comment")
 require("nnisarggada.plugins.nvim-tree")
 require("nnisarggada.plugins.lualine")
@@ -15,5 +14,3 @@ require("nnisarggada.plugins.autopairs")
 require("nnisarggada.plugins.treesitter")
 require("nnisarggada.plugins.gitsigns")
 require("nnisarggada.plugins.flutter")
-
-vim.cmd([[hi NvimTreeNormal guibg=NONE ctermbg=NONE]])
