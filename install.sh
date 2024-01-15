@@ -44,6 +44,7 @@ sudo cp .vimrc.plug ~/
 
 sudo cp -r lightdm /etc/
 sudo cp environment /etc/
+sudo cp 40-libinput.conf /usr/share/X11/xorg.conf.d/
 
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 sudo usermod -aG input $USER
