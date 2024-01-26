@@ -6,10 +6,10 @@ feh --bg-fill $wall &
 
 betterlockscreen -u $wall &
 
-cp ~/.cache/wal/dunstrc ~/.config/dunst
-cp ~/.cache/wal/polybar-config.ini ~/.config/polybar/config.ini
-
 wal -c
 wal -i $wall
+
+cp ~/.cache/wal/dunstrc ~/.config/dunst
+
 killall dunst
 dunst
