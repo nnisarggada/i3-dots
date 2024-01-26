@@ -1,14 +1,5 @@
 #!/bin/bash
 
-mkdir ~/Desktop
-mkdir ~/Pictures
-mkdir ~/Pictures/Screenshots
-mkdir ~/Music
-mkdir ~/Downloads
-mkdir ~/.icons
-mkdir ~/.fonts
-mkdir ~/.local
-
 yay || {
 	git clone https://aur.archlinux.org/yay-bin
 	cd yay-bin
@@ -17,9 +8,10 @@ yay || {
 	yay && rm -rf yay-bin
 }
 
-progams=("ripgrep" "flatpak" "arandr" "linux-headers" "v4l2loopback-dkms" "nvidia" "nvidia-utils" "lib32-nvidia-utils" "xdg-desktop-portal-gtk" "network-manager-applet" "adwaita-dark" "nm-connection-editor" "ueberzug" "libinput-gestures" "xdotool" "ncdu" "mpd" "mpv" "autotiling" "bluez" "bluez-libs" "bluez-utils" "dunst" "git" "github-cli" "lxappearance" "papirus-icon-theme" "pavucontrol" "picom" "playerctl" "blueman" "qt5ct" "qt5-styleplugins" "rofi-emoji" "rofi-power-menu-git" "rofi-calc" "gparted" "flameshot" "unzip" "zip" "copyq" "betterlockscreen" "polybar" "rofi" "xorg-xinput" "thorium-browser-bin" "zsh" "alacritty" "pcmanfm" "htop" "neofetch" "brightnessctl" "ntfs-3g" "udisks2" "udiskie" "gvfs" "ttf-ms-fonts" "bibata-cursor-theme" "neovim" "nodejs" "npm" "lua" "python-pillow" "zathura" "gtk-theme-windows10-dark" "polkit-gnome" "feh" "ttf-joypixels" "ttf-jetbrains-mono-nerd" "zathura-pdf-mupdf" "gtk-engine-murrine" "xclip" "python-pip" "mlocate" "zsh-syntax-highlighting" "libnotify" "jq" "acpi" "sxiv" "mission-center")
+progams=("ripgrep" "flatpak" "arandr" "linux-headers" "v4l2loopback-dkms" "nvidia" "nvidia-utils" "lib32-nvidia-utils" "xdg-desktop-portal-gtk" "network-manager-applet" "adwaita-dark" "nm-connection-editor" "ueberzug" "libinput-gestures" "xdotool" "ncdu" "mpd" "mpv" "autotiling" "bluez" "bluez-libs" "bluez-utils" "dunst" "git" "github-cli" "lxappearance" "papirus-icon-theme" "pavucontrol" "picom" "playerctl" "blueman" "qt5ct" "qt5-styleplugins" "gparted" "flameshot" "unzip" "zip" "copyq" "betterlockscreen" "polybar" "xorg-xinput" "firefox" "zsh" "alacritty" "pcmanfm" "htop" "neofetch" "brightnessctl" "ntfs-3g" "udisks2" "udiskie" "gvfs" "ttf-ms-fonts" "bibata-cursor-theme" "neovim" "nodejs" "npm" "lua" "python-pillow" "zathura" "gtk-theme-windows10-dark" "polkit-gnome" "feh" "ttf-joypixels" "ttf-jetbrains-mono-nerd" "zathura-pdf-mupdf" "gtk-engine-murrine" "xclip" "python-pip" "mlocate" "zsh-syntax-highlighting" "libnotify" "jq" "acpi" "sxiv" "mission-center" "python-pywal" "python-pywalfox" "dmenu2" "j4-dmenu-desktop")
 
 yay -R --noconfirm i3lock
+yay -R --noconfirm dmenu
 
 for program in "${progams[@]}"; do
 	if ! yay -Q "$program" >/dev/null 2>&1; then
@@ -31,20 +23,18 @@ for program in "${progams[@]}"; do
 	fi
 done
 
-sudo cp -r .config ~/
-sudo cp -r .local ~/
-sudo cp -r .icons ~/
-sudo cp -r .fonts ~/
-sudo cp -r Pictures ~/
-sudo cp -r Music ~/
-sudo cp .vimrc ~/
-sudo cp .zshrc ~/
-sudo cp .viminfo ~/
-sudo cp .vimrc.plug ~/
-
-sudo cp -r lightdm /etc/
-sudo cp environment /etc/
+sudo cp -r ./* ~/
 sudo cp 40-libinput.conf /usr/share/X11/xorg.conf.d/
+sudo cp environment /etc/
+
+sudo rm -rf ~/40-libinput.conf
+sudo rm -rf ~/disable-touchscreen.conf
+sudo rm -rf ~/.git
+sudo rm -rf ~/.gitattributes
+sudo rm -rf ~/environment
+sudo rm -rf ~/README.md
+
+sed -i "s/nnisarggada/$USER/g" ~/.config/dunst/dunstrc
 
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 sudo usermod -aG input $USER

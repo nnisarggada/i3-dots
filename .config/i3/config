@@ -13,8 +13,9 @@ bindsym $mod+Shift+Return exec alacritty --class floating
 
 bindsym $mod+q kill
 
-bindsym Mod1+space exec rofi -show drun -kb-cancel 'Alt-space'
-bindsym $mod+Shift+q exec rofi -show power-menu -modi power-menu:rofi-power-menu
+bindsym $mod+d exec j4-dmenu-desktop --dmenu='~/.local/bin/dmen -p "APPS:"'
+bindsym $mod+Shift+d exec dmen_run -p "RUN:"
+bindsym $mod+Shift+q exec system_action
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -105,18 +106,17 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color 	                #ffffff
-set $inactive-bg-color          #0c0c1e
-set $text-color                 #ffffff
-set $inactive-text-color        #ffffff
-set $urgent-bg-color            #ff4151
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
 
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color            $bg-color           $text-color          $bg-color
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $inactive-bg-color
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $inactive-bg-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $inactive-bg-color
+# class                 border  backgr. text indicator child_border
+client.focused          $fg     $fg     $bg  $fg       $fg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
 
 bindsym XF86AudioRaiseVolume exec ~/.config/dunst/dunstify_vol -i 10
 bindsym XF86AudioLowerVolume exec ~/.config/dunst/dunstify_vol -d 10
@@ -179,11 +179,10 @@ exec_always --no-startup-id xinput set-prop "SYNA328B:00 06CB:CD50 Touchpad" "li
 exec_always --no-startup-id xmodmap -e "clear lock"
 exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = BackSpace" 
 bindsym $mod+Mod1+l exec playerctl pause & betterlockscreen -l --time-format "%I:%M %p"
-bindsym $mod+b exec thorium-browser
+bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
 bindsym $mod+c exec i3-msg move position center
-bindsym $mod+period exec rofi -show emoji
-bindsym $mod+comma exec rofi -show calc
+bindsym $mod+period exec emoji
 bindsym Print exec flameshot gui
 bindsym $mod+Ctrl+Shift+s exec flameshot gui
 bindsym $mod+z exec polybar-msg cmd toggle
@@ -194,11 +193,10 @@ bindsym $mod+v exec copyq show && i3-msg move position center
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id ~/.config/dunst/dunstify_bat &
 exec_always --no-startup-id autotiling &
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/what-will-you-say-today.jpg &
-exec_always --no-startup-id betterlockscreen -u ~/Pictures/Wallpapers/what-will-you-say-today.jpg &
+exec_always --no-startup-id newlook &
 exec_always --no-startup-id picom &
 exec_always --no-startup-id xclip &
 exec_always --no-startup-id killall copyq ; copyq &
 exec_always --no-startup-id killall polybar ; polybar &
 exec_always --no-startup-id udiskie &
-exec_always --no-startup-id ~/.local/bin/check_updates &
+exec_always --no-startup-id check_upadtes &

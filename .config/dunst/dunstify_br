@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. ~/.cache/wal/colors.sh
+
 # By abxh (github)
 
 tag="string:x-dunst-stack-tag:brightness"
@@ -8,7 +10,7 @@ path="/sys/class/backlight/amdgpu_bl1/"
 
 notify() {
 	value="$1"
-	dunstify -h int:value:$percent -h string:hlcolor:"#ffffff" \
+	dunstify -h int:value:$percent -h string:hlcolor:$foreground \
 		-h $tag -u low -i "$icon" \
 		"Brightness" \
 		"$percent%"

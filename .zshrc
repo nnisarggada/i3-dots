@@ -74,3 +74,13 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 #My config
 export PATH=$HOME/.local/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/home/nnisarggada/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+cat ~/.cache/wal/sequences

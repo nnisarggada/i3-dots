@@ -1,0 +1,186 @@
+# See dunst(5) for all configuration options
+
+[global]
+    ### Display ###
+
+    # Which monitor should the notifications be displayed on.
+    monitor = 0
+
+    # Display notification on focused monitor.  Possible modes are:
+    #   mouse: follow mouse pointer
+    #   keyboard: follow window with keyboard focus
+    #   none: don't follow anything
+    #
+    # "keyboard" needs a window manager that exports the
+    # _NET_ACTIVE_WINDOW property.
+    # This should be the case for almost all modern window managers.
+    #
+    # If this option is set to mouse or keyboard, the monitor option
+    # will be ignored.
+    follow = none
+
+    ### Geometry ###
+
+    # dynamic width from 0 to 300
+    # width = (0, 300)
+    # constant width of 300
+    width = 300
+
+    # The maximum height of a single notification, excluding the frame.
+    height = 200
+
+    # Position the notification in the top right corner
+    origin = top-right
+
+    # Offset from the origin
+    offset = 0x45
+
+    # Scale factor. It is auto-detected if value is 0.
+    scale = 0
+
+    # Maximum number of notification (0 means no limit)
+    notification_limit = 20
+
+    ### Progress bar ###
+
+    # Turn on the progess bar. It appears when a progress hint is passed with
+    # for example dunstify -h int:value:12
+    progress_bar = true
+
+    # Set the progress bar height. This includes the frame, so make sure
+    # it's at least twice as big as the frame width.
+    progress_bar_height = 15
+
+    # Set the frame width of the progress bar
+    progress_bar_frame_width = 2
+
+    # Set the minimum width for the progress bar
+    progress_bar_min_width = 150
+
+    # Set the maximum width for the progress bar
+    progress_bar_max_width = 300
+
+    # Corner radius for the progress bar. 0 disables rounded corners.
+    progress_bar_corner_radius = 0
+
+    # Corner radius for the icon image.
+    icon_corner_radius = 0
+
+    # Show how many messages are currently hidden (because of
+    # notification_limit).
+    indicate_hidden = yes
+
+    # The transparency of the window.  Range: [0; 100].
+    # This option will only work if a compositing window manager is
+    # present (e.g. xcompmgr, compiz, etc.). (X11 only)
+    transparency = 0
+
+    # Draw a line of "separator_height" pixel height between two
+    # notifications.
+    # Set to 0 to disable.
+    # If gap_size is greater than 0, this setting will be ignored.
+    separator_height = 3
+
+    # Padding between text and separator.
+    padding = 16
+
+    # Horizontal padding.
+    horizontal_padding = 16
+
+    # Padding between text and icon.
+    text_icon_padding = 0
+
+    # Defines width in pixels of frame around the notification window.
+    # Set to 0 to disable.
+    frame_width = 1
+
+    # Defines color of the frame around the notification window.
+    frame_color = "{foreground}"
+    background_color = "{background}"
+    foreground_color = "{foreground}"
+
+    gap_size = 10
+
+    separator_color = frame
+
+    sort = yes
+
+    font = JetBrains Mono Nerd Font 12
+    line_height = 0
+
+    markup = full
+
+    format = "<b>%s</b>\n%b"
+
+    alignment = left
+
+    vertical_alignment = center
+
+    show_age_threshold = 60
+
+    ellipsize = middle
+
+    ignore_newline = no
+
+    stack_duplicates = true
+    hide_duplicate_count = false
+
+    show_indicators = yes
+
+    enable_recursive_icon_lookup = true
+    icon_theme = Papirus-Dark
+    icon_position = left
+    min_icon_size = 25
+    max_icon_size = 128
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+    sticky_history = yes
+    history_length = 20
+
+    ### Misc/Advanced ###
+
+    # dmenu path.
+    dmenu = /home/nnisarggada/.local/bin/dmen -p dunst:
+
+    browser = /usr/bin/firefox
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 0
+    ignore_dbusclose = false
+    force_xwayland = false
+    force_xinerama = false
+    mouse_left_click = do_action
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[experimental]
+   per_monitor_dpi = false
+
+
+[urgency_low]
+    background = "{background}"
+    foreground = "{foreground}"
+    timeout = 10
+
+[urgency_normal]
+    background = "{background}"
+    foreground = "{foreground}"
+    timeout = 10
+
+[urgency_critical]
+    background = "{background}"
+    foreground = "{foreground}"
+    frame_color = "#F75265"
+    timeout = 0
+
+[fullscreen_delay_everything]
+    fullscreen = delay
+
+[fullscreen_show_critical]
+    msg_urgency = critical
+    fullscreen = show
+
+[play_sound]
+    summary = "*"
+    script = /home/nnisarggada/.config/dunst/notif.sh

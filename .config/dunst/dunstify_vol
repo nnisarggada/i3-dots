@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. ~/.cache/wal/colors.sh
+
 # By abxh (github)
 
 sink_name="@DEFAULT_SINK@"
@@ -29,7 +31,7 @@ function sink_notification {
         fi
 
 	dunstify -h int:value:$(( $sink_volume*100/$vol_max)) \
-		 -h string:hlcolor:"#ffffff" \
+		 -h string:hlcolor:$foreground \
                  -u low \
                  -h $sink_tag \
                  -i "$sink_icon" \

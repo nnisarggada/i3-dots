@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Import the colors
+. "${HOME}/.cache/wal/colors.sh"
+
+# Extract additional arguments
+additional_args="$@"
+
+# Run dmenu with additional arguments
+dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -h 40 -fn "JetBrainsMono Nerd Font-12" $additional_args

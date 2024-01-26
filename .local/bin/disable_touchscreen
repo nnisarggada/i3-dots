@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xinput disable "ELAN2514:00 04F3:23DD"
