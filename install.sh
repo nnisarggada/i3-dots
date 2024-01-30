@@ -1,5 +1,12 @@
 #!/bin/bash
 
+mkdir ~/dl
+mkdir ~/dox
+mkdir ~/pub
+mkdir ~/vids
+mkdir ~/work
+mkdir ~/music
+
 yay || {
 	git clone https://aur.archlinux.org/yay-bin
 	cd yay-bin
@@ -33,8 +40,9 @@ sudo rm -rf ~/.git
 sudo rm -rf ~/.gitattributes
 sudo rm -rf ~/environment
 sudo rm -rf ~/README.md
+sudo rm -rf ~/install.sh
 
-sed -i "s/nnisarggada/$USER/g" ~/.config/dunst/dunstrc
+sed -i "s/nnisarggada/$USER/g" ~/.config/wal/templates/dunstrc
 
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 sudo usermod -aG input $USER
