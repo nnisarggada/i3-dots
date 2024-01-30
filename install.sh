@@ -30,17 +30,19 @@ for program in "${progams[@]}"; do
 	fi
 done
 
-sudo cp -r ./* ~/
+sudo cp -r .config ~/
+sudo cp -r .local ~/
+sudo cp -r .icons ~/
+sudo cp -r .fonts ~/
+sudo cp -r pix/ ~/
+sudo cp .vimrc ~/
+sudo cp .zshrc ~/
+sudo cp .xprofile ~/
+sudo cp .viminfo ~/
+sudo cp .vimrc.plug ~/
+
 sudo cp 40-libinput.conf /usr/share/X11/xorg.conf.d/
 sudo cp environment /etc/
-
-sudo rm -rf ~/40-libinput.conf
-sudo rm -rf ~/disable-touchscreen.conf
-sudo rm -rf ~/.git
-sudo rm -rf ~/.gitattributes
-sudo rm -rf ~/environment
-sudo rm -rf ~/README.md
-sudo rm -rf ~/install.sh
 
 sed -i "s/nnisarggada/$USER/g" ~/.config/wal/templates/dunstrc
 
