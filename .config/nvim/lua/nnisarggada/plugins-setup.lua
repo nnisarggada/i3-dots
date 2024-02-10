@@ -130,6 +130,9 @@ return packer.startup(function(use)
   -- codeium
   use("Exafunction/codeium.vim")
 
+  -- astro.build
+  use("wuelnerdotexe/vim-astro")
+
   -- flutter tools
   use({
     "akinsho/flutter-tools.nvim",
@@ -143,6 +146,14 @@ return packer.startup(function(use)
       "tzachar/highlight-undo.nvim",
       config = function()
         require("highlight-undo").setup()
+      end,
+    }),
+
+    -- markdown preview
+    use({
+      "iamcco/markdown-preview.nvim",
+      run = function()
+        vim.fn["mkdp#util#install"]()
       end,
     }),
   })

@@ -160,6 +160,11 @@ _G.packer_plugins = {
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -259,6 +264,11 @@ _G.packer_plugins = {
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/vim-ReplaceWithRegister",
     url = "https://github.com/inkarkat/vim-ReplaceWithRegister"
   },
+  ["vim-astro"] = {
+    loaded = true,
+    path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/vim-astro",
+    url = "https://github.com/wuelnerdotexe/vim-astro"
+  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/vim-maximizer",
@@ -277,10 +287,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: tokyodark.nvim
-time([[Config for tokyodark.nvim]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme tokyodark\bcmd\bvim\0", "config", "tokyodark.nvim")
-time([[Config for tokyodark.nvim]], false)
 -- Config for: highlight-undo.nvim
 time([[Config for highlight-undo.nvim]], true)
 try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19highlight-undo\frequire\0", "config", "highlight-undo.nvim")
@@ -289,6 +295,10 @@ time([[Config for highlight-undo.nvim]], false)
 time([[Config for nvim-transparent]], true)
 try_loadstring("\27LJ\2\n5\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\24transparent_enabled\6g\bvim\0", "config", "nvim-transparent")
 time([[Config for nvim-transparent]], false)
+-- Config for: tokyodark.nvim
+time([[Config for tokyodark.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme tokyodark\bcmd\bvim\0", "config", "tokyodark.nvim")
+time([[Config for tokyodark.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
