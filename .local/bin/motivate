@@ -1,0 +1,10 @@
+#!/bin/sh
+
+API_URL="http://api.quotable.io/quotes/random"
+response=$(curl -s "$API_URL")
+
+if [ $? -eq 0 ]; then
+    echo $response | jq -r '.[0].content'
+else
+    echo "All you have is the PRESENT!"
+fi
