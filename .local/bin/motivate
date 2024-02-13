@@ -1,6 +1,6 @@
 #!/bin/sh
 
-API_URL="http://api.quotable.io/quotes/random"
+API_URL="http://api.quotable.io/quotes/random?maxLength=50"
 response=$(curl -s "$API_URL")
 
 if [ $? -eq 0 ]; then
