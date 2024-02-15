@@ -84,4 +84,3 @@ esac
 # pnpm end
 
 cat ~/.cache/wal/sequences
-~/.local/bin/motivate
