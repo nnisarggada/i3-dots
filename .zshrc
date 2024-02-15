@@ -84,3 +84,4 @@ esac
 # pnpm end
 
 cat ~/.cache/wal/sequences
+setopt autocd
