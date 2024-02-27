@@ -135,7 +135,8 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-gaps inner 10
+gaps inner 5
+smart_gaps on
 
 for_window [urgent=latest] focus
 for_window [all] border pixel 2
