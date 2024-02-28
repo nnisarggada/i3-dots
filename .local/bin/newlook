@@ -1,13 +1,13 @@
 #!/bin/sh
 
-wall=$(find ~/pix/walls/ -type f -name "*.jpg" -o -name "*.png" | shuf -n 1)
+wall=$(find ~/pix/walls/ -type f -name "*" | shuf -n 1)
 
-feh --bg-fill $wall &
+feh --bg-fill "$wall" &
 
-betterlockscreen -u $wall &
+betterlockscreen -u "$wall" &
 
 wal -c
-wal -i $wall
+wal -i "$wall"
 
 cp ~/.cache/wal/dunstrc ~/.config/dunst
 
