@@ -156,6 +156,30 @@ return packer.startup(function(use)
         vim.fn["mkdp#util#install"]()
       end,
     }),
+
+    -- silicon
+    use({
+      "michaelrommel/nvim-silicon",
+      cmd = "Silicon",
+      config = function()
+        require("silicon").setup({
+          font = "JetBrains Mono NF=34;Noto Color Emoji=34",
+          theme = "Dracula",
+          no_line_number = true,
+          language = function()
+            return vim.bo.filetype
+          end,
+          shadow_blur_radius = 16,
+          shadow_offset_x = 8,
+          shadow_offset_y = 8,
+          shadow_color = "#100808",
+          gobble = true,
+          window_title = function()
+            return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()), ":t")
+          end,
+        })
+      end,
+    }),
   })
 
   if packer_bootstrap then

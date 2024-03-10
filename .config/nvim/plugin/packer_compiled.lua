@@ -200,6 +200,15 @@ _G.packer_plugins = {
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-silicon"] = {
+    commands = { "Silicon" },
+    config = { "\27LJ\2\n'\0\0\1\0\3\0\0046\0\0\0009\0\1\0009\0\2\0L\0\2\0\rfiletype\abo\bvim|\0\0\6\0\a\0\r6\0\0\0009\0\1\0009\0\2\0006\2\0\0009\2\3\0029\2\4\0026\4\0\0009\4\3\0049\4\5\4B\4\1\0A\2\0\2'\3\6\0D\0\3\0\a:t\25nvim_get_current_buf\22nvim_buf_get_name\bapi\16fnamemodify\afn\bvim†\2\1\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0003\3\4\0=\3\5\0023\3\6\0=\3\a\2B\0\2\1K\0\1\0\17window_title\0\rlanguage\0\1\0\b\19no_line_number\2\ntheme\fDracula\vgobble\2\20shadow_offset_y\3\b\20shadow_offset_x\3\b\23shadow_blur_radius\3\16\tfont-JetBrains Mono NF=34;Noto Color Emoji=34\17shadow_color\f#100808\nsetup\fsilicon\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/opt/nvim-silicon",
+    url = "https://github.com/michaelrommel/nvim-silicon"
+  },
   ["nvim-transparent"] = {
     config = { "\27LJ\2\n5\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\24transparent_enabled\6g\bvim\0" },
     loaded = true,
@@ -287,23 +296,35 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: highlight-undo.nvim
-time([[Config for highlight-undo.nvim]], true)
-try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19highlight-undo\frequire\0", "config", "highlight-undo.nvim")
-time([[Config for highlight-undo.nvim]], false)
--- Config for: nvim-transparent
-time([[Config for nvim-transparent]], true)
-try_loadstring("\27LJ\2\n5\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\24transparent_enabled\6g\bvim\0", "config", "nvim-transparent")
-time([[Config for nvim-transparent]], false)
 -- Config for: tokyodark.nvim
 time([[Config for tokyodark.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme tokyodark\bcmd\bvim\0", "config", "tokyodark.nvim")
 time([[Config for tokyodark.nvim]], false)
+-- Config for: nvim-transparent
+time([[Config for nvim-transparent]], true)
+try_loadstring("\27LJ\2\n5\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\24transparent_enabled\6g\bvim\0", "config", "nvim-transparent")
+time([[Config for nvim-transparent]], false)
+-- Config for: highlight-undo.nvim
+time([[Config for highlight-undo.nvim]], true)
+try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19highlight-undo\frequire\0", "config", "highlight-undo.nvim")
+time([[Config for highlight-undo.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-ts-autotag ]]
 time([[Sequenced loading]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'Silicon', function(cmdargs)
+          require('packer.load')({'nvim-silicon'}, { cmd = 'Silicon', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'nvim-silicon'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Silicon ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
+
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
