@@ -39,9 +39,9 @@ bindsym $mod+Shift+Right move right
 
 bindsym $mod+f fullscreen toggle
 
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+x layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+x layout toggle split
 
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+Shift+p sticky toggle
@@ -135,8 +135,7 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-gaps inner 5
-smart_gaps on
+gaps inner 10
 
 for_window [urgent=latest] focus
 for_window [all] border pixel 2
@@ -188,6 +187,7 @@ bindsym Print exec ss
 bindsym Shift+Print exec ss -s
 bindsym $mod+Shift+s exec ss
 bindsym $mod+Ctrl+Shift+s exec ss -s
+bindsym $mod+Shift+c exec color_picker
 bindsym $mod+z exec polybar-msg cmd toggle
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
