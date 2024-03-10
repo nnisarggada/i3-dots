@@ -187,7 +187,6 @@ bindsym Print exec ss
 bindsym Shift+Print exec ss -s
 bindsym $mod+Shift+s exec ss
 bindsym $mod+Ctrl+Shift+s exec ss -s
-bindsym $mod+Shift+c exec color_picker
 bindsym $mod+z exec polybar-msg cmd toggle
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
