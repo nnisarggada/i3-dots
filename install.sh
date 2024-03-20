@@ -1,6 +1,5 @@
 #!/bin/bash
 
-mkdir ~/dl
 mkdir ~/dox
 mkdir ~/pub
 mkdir ~/vids
