@@ -207,7 +207,7 @@ _G.packer_plugins = {
   },
   ["nvim-silicon"] = {
     commands = { "Silicon" },
-    config = { "\27LJ\2\n'\0\0\1\0\3\0\0046\0\0\0009\0\1\0009\0\2\0L\0\2\0\rfiletype\abo\bvim|\0\0\6\0\a\0\r6\0\0\0009\0\1\0009\0\2\0006\2\0\0009\2\3\0029\2\4\0026\4\0\0009\4\3\0049\4\5\4B\4\1\0A\2\0\2'\3\6\0D\0\3\0\a:t\25nvim_get_current_buf\22nvim_buf_get_name\bapi\16fnamemodify\afn\bvim†\2\1\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0003\3\4\0=\3\5\0023\3\6\0=\3\a\2B\0\2\1K\0\1\0\17window_title\0\rlanguage\0\1\0\b\vgobble\2\17shadow_color\f#100808\20shadow_offset_y\3\b\20shadow_offset_x\3\b\23shadow_blur_radius\3\16\19no_line_number\2\ntheme\fDracula\tfont-JetBrains Mono NF=34;Noto Color Emoji=34\nsetup\fsilicon\frequire\0" },
+    config = { "\27LJ\2\nF\0\0\3\0\5\0\t6\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\2'\1\4\0\18\2\0\0&\1\2\1L\1\2\0\v/home/\n$USER\vexpand\afn\bvim'\0\0\1\0\3\0\0046\0\0\0009\0\1\0009\0\2\0L\0\2\0\rfiletype\abo\bvim|\0\0\6\0\a\0\r6\0\0\0009\0\1\0009\0\2\0006\2\0\0009\2\3\0029\2\4\0026\4\0\0009\4\3\0049\4\5\4B\4\1\0A\2\0\2'\3\6\0D\0\3\0\a:t\25nvim_get_current_buf\22nvim_buf_get_name\bapi\16fnamemodify\afn\bvimW\0\0\4\0\5\0\b'\0\0\0006\1\1\0009\1\2\1'\3\3\0B\1\2\2'\2\4\0&\0\2\0L\0\2\0\14_code.png\23!%Y-%m-%dT%H-%M-%S\tdate\aos\15./silicon_Ø\2\1\0\6\0\r\0\0193\0\0\0006\1\1\0'\3\2\0B\1\2\0029\1\3\0015\3\4\0\18\4\0\0B\4\1\2'\5\5\0&\4\5\4=\4\6\0033\4\a\0=\4\b\0033\4\t\0=\4\n\0033\4\v\0=\4\f\3B\1\2\1K\0\1\0\voutput\0\17window_title\0\rlanguage\0\21background_image\28/.config/silicon/bg.jpg\1\0\b\vgobble\2\17shadow_color\f#100808\20shadow_offset_y\3\b\20shadow_offset_x\3\b\23shadow_blur_radius\3\16\19no_line_number\2\ntheme\fDracula\tfont-JetBrains Mono NF=34;Noto Color Emoji=34\nsetup\fsilicon\frequire\0\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -305,14 +305,14 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-transparent]], true)
 try_loadstring("\27LJ\2\n5\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\24transparent_enabled\6g\bvim\0", "config", "nvim-transparent")
 time([[Config for nvim-transparent]], false)
--- Config for: tokyodark.nvim
-time([[Config for tokyodark.nvim]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme tokyodark\bcmd\bvim\0", "config", "tokyodark.nvim")
-time([[Config for tokyodark.nvim]], false)
 -- Config for: highlight-undo.nvim
 time([[Config for highlight-undo.nvim]], true)
 try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19highlight-undo\frequire\0", "config", "highlight-undo.nvim")
 time([[Config for highlight-undo.nvim]], false)
+-- Config for: tokyodark.nvim
+time([[Config for tokyodark.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme tokyodark\bcmd\bvim\0", "config", "tokyodark.nvim")
+time([[Config for tokyodark.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
