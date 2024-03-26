@@ -5,7 +5,7 @@ case "$(readlink -f /sbin/init)" in
 	*) ctl='loginctl' ;;
 esac
 
-case "$(printf " lock\n logout\n  sleep\n reboot\n shutdown" | dmenu -h 40 -fn 'JetBrainsMono Nerd Font-12' -p "SYS: " -nf '#ffffff' -nb '#000000' -sf '#ffffff' -sb '#F75265')" in
+case "$(printf " lock\n logout\n  sleep\n reboot\n shutdown" | dmenu -h 45 -fn 'JetBrainsMono Nerd Font-12' -p "SYS: " -nf '#ffffff' -nb '#000000' -sf '#ffffff' -sb '#F75265')" in
 	' lock')  playerctl pause & betterlockscreen -l --time-format "%I:%M %p" ;;
 	' logout') loginctl terminate-session ${XDG_SESSION_ID-} ;;
   ' sleep') $ctl suspend ;;
