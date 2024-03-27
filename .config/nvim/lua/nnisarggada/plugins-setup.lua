@@ -173,6 +173,9 @@ return packer.startup(function(use)
           background_image = get_home_directory() .. "/.config/silicon/bg.jpg",
           no_line_number = true,
           language = function()
+            if vim.bo.filetype == "astro" then
+              return "jsx"
+            end
             return vim.bo.filetype
           end,
           shadow_blur_radius = 16,

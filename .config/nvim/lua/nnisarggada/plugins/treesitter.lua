@@ -37,4 +37,10 @@ treesitter.setup({
   },
   -- auto install above language parsers
   auto_install = true,
+
+  vim.filetype.add({
+    extension = {
+      astro = "astro",
+    },
+  }),
 })
