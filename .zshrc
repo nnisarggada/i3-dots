@@ -1,5 +1,3 @@
-# Luke's config for the Zoomer Shell
-
 # Enable colors and change prompt:
 autoload -U colors && colors
 PS1="%B%{$fg[magenta]%}%~%{$fg[red]%} >%{$reset_color%}%b "
@@ -88,3 +86,4 @@ setopt autocd
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias gc='better-commits'
