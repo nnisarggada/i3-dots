@@ -87,3 +87,4 @@ setopt autocd
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias gc='better-commits'
+alias pn='pocketnaut'
