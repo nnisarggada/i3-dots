@@ -16,27 +16,19 @@ treesitter.setup({
   autotag = { enable = true },
   -- ensure these language parsers are installed
   ensure_installed = {
-    "json",
     "javascript",
     "typescript",
     "tsx",
-    "yaml",
     "html",
     "css",
-    "markdown",
-    "markdown_inline",
-    "svelte",
-    "graphql",
     "bash",
     "lua",
     "vim",
-    "dockerfile",
-    "gitignore",
-    "astro",
-    "python",
   },
   -- auto install above language parsers
   auto_install = true,
+
+  ignore_install = { "astro" },
 
   vim.filetype.add({
     extension = {
