@@ -62,3 +62,8 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+-- format
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+-- format on save
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
