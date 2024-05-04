@@ -151,6 +151,19 @@ return packer.startup(function(use)
     end,
   })
 
+  -- transparent
+  use({
+    "xiyaowong/nvim-transparent",
+    config = function()
+      require("transparent").setup({
+        extra_groups = {
+          "NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
+          "NvimTreeNormal", -- NvimTree
+        },
+      })
+    end,
+  })
+
   -- silicon
   use({
     "michaelrommel/nvim-silicon",

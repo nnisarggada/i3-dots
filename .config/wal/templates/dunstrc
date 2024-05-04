@@ -180,7 +180,3 @@
 [fullscreen_show_critical]
     msg_urgency = critical
     fullscreen = show
-
-[play_sound]
-    summary = "*"
-    script = /home/nnisarggada/.config/dunst/notif.sh

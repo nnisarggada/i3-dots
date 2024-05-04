@@ -50,6 +50,7 @@ sudo cp -r pix/ ~/
 sudo cp .vimrc ~/
 sudo cp .zshrc ~/
 sudo cp .xprofile ~/
+sudo cp .xinitrc ~/
 sudo cp .viminfo ~/
 sudo cp .vimrc.plug ~/
 

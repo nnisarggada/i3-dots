@@ -3,6 +3,7 @@ set $mod Mod4
 font JetBrains Mono Nerd Font 12
 
 exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id batmon -n -L 20 -s ~/.local/share/sounds/notification.ogg -v 75
 
 floating_modifier $mod
 
@@ -190,7 +191,6 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+v exec copyq show && i3-msg move position center
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec --no-startup-id ~/.config/dunst/dunstify_bat &
 exec_always --no-startup-id killall copyq ; copyq &
 exec_always --no-startup-id killall polybar ; polybar &
 exec_always --no-startup-id caffeine &
