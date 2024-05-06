@@ -89,6 +89,16 @@ _G.packer_plugins = {
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["alpha-nvim"] = {
+    loaded = true,
+    path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -129,11 +139,21 @@ _G.packer_plugins = {
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   ["highlight-undo.nvim"] = {
     config = { "\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19highlight-undo\frequire\0" },
     loaded = true,
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/highlight-undo.nvim",
     url = "https://github.com/tzachar/highlight-undo.nvim"
+  },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
   },
   ["lspkind.nvim"] = {
     loaded = true,
@@ -192,7 +212,7 @@ _G.packer_plugins = {
   },
   ["nvim-silicon"] = {
     commands = { "Silicon" },
-    config = { "\27LJ\2\nF\0\0\3\0\5\0\t6\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\2'\1\4\0\18\2\0\0&\1\2\1L\1\2\0\v/home/\n$USER\vexpand\afn\bvimM\0\0\1\0\5\0\v6\0\0\0009\0\1\0009\0\2\0\a\0\3\0X\0\2€'\0\4\0L\0\2\0006\0\0\0009\0\1\0009\0\2\0L\0\2\0\bjsx\nastro\rfiletype\abo\bvim|\0\0\6\0\a\0\r6\0\0\0009\0\1\0009\0\2\0006\2\0\0009\2\3\0029\2\4\0026\4\0\0009\4\3\0049\4\5\4B\4\1\0A\2\0\2'\3\6\0D\0\3\0\a:t\25nvim_get_current_buf\22nvim_buf_get_name\bapi\16fnamemodify\afn\bvimW\0\0\4\0\5\0\b'\0\0\0006\1\1\0009\1\2\1'\3\3\0B\1\2\2'\2\4\0&\0\2\0L\0\2\0\14_code.png\23!%Y-%m-%dT%H-%M-%S\tdate\aos\15./silicon_Š\3\1\0\6\0\r\0\0193\0\0\0006\1\1\0'\3\2\0B\1\2\0029\1\3\0015\3\4\0\18\4\0\0B\4\1\2'\5\5\0&\4\5\4=\4\6\0033\4\a\0=\4\b\0033\4\t\0=\4\n\0033\4\v\0=\4\f\3B\1\2\1K\0\1\0\voutput\0\17window_title\0\rlanguage\0\21background_image\28/.config/silicon/bg.jpg\1\0\f\17window_title\0\ntheme\fDracula\voutput\0\tfont-JetBrains Mono NF=34;Noto Color Emoji=34\vgobble\2\17shadow_color\f#100808\20shadow_offset_y\3\b\20shadow_offset_x\3\b\23shadow_blur_radius\3\16\rlanguage\0\19no_line_number\2\21background_image\0\nsetup\fsilicon\frequire\0\0" },
+    config = { "\27LJ\2\nF\0\0\3\0\5\0\t6\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\2'\1\4\0\18\2\0\0&\1\2\1L\1\2\0\v/home/\n$USER\vexpand\afn\bvimM\0\0\1\0\5\0\v6\0\0\0009\0\1\0009\0\2\0\a\0\3\0X\0\2€'\0\4\0L\0\2\0006\0\0\0009\0\1\0009\0\2\0L\0\2\0\bjsx\nastro\rfiletype\abo\bvim|\0\0\6\0\a\0\r6\0\0\0009\0\1\0009\0\2\0006\2\0\0009\2\3\0029\2\4\0026\4\0\0009\4\3\0049\4\5\4B\4\1\0A\2\0\2'\3\6\0D\0\3\0\a:t\25nvim_get_current_buf\22nvim_buf_get_name\bapi\16fnamemodify\afn\bvimW\0\0\4\0\5\0\b'\0\0\0006\1\1\0009\1\2\1'\3\3\0B\1\2\2'\2\4\0&\0\2\0L\0\2\0\14_code.png\23!%Y-%m-%dT%H-%M-%S\tdate\aos\15./silicon_Š\3\1\0\6\0\r\0\0193\0\0\0006\1\1\0'\3\2\0B\1\2\0029\1\3\0015\3\4\0\18\4\0\0B\4\1\2'\5\5\0&\4\5\4=\4\6\0033\4\a\0=\4\b\0033\4\t\0=\4\n\0033\4\v\0=\4\f\3B\1\2\1K\0\1\0\voutput\0\17window_title\0\rlanguage\0\21background_image\28/.config/silicon/bg.jpg\1\0\f\voutput\0\tfont-JetBrains Mono NF=34;Noto Color Emoji=34\vgobble\2\17window_title\0\17shadow_color\f#100808\20shadow_offset_y\3\b\20shadow_offset_x\3\b\23shadow_blur_radius\3\16\rlanguage\0\19no_line_number\2\21background_image\0\ntheme\fDracula\nsetup\fsilicon\frequire\0\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -200,7 +220,7 @@ _G.packer_plugins = {
     url = "https://github.com/michaelrommel/nvim-silicon"
   },
   ["nvim-transparent"] = {
-    config = { "\27LJ\2\n¬\1\0\0\4\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\6\0009\0\a\0'\2\b\0B\0\2\1K\0\1\0\22TransparentEnable\bcmd\bvim\17extra_groups\1\0\1\17extra_groups\0\1\3\0\0\16NormalFloat\19NvimTreeNormal\nsetup\16transparent\frequire\0" },
+    config = { "\27LJ\2\n‚\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\17extra_groups\1\0\1\17extra_groups\0\1\3\0\0\16NormalFloat\19NvimTreeNormal\nsetup\16transparent\frequire\0" },
     loaded = true,
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/nvim-transparent",
     url = "https://github.com/xiyaowong/nvim-transparent"
@@ -247,10 +267,10 @@ _G.packer_plugins = {
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tokyonight.nvim"] = {
+  ["toggleterm.nvim"] = {
     loaded = true,
-    path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
+    path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ["typescript.nvim"] = {
     loaded = true,
@@ -286,6 +306,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/nnisarggada/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
@@ -296,7 +321,7 @@ try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K
 time([[Config for highlight-undo.nvim]], false)
 -- Config for: nvim-transparent
 time([[Config for nvim-transparent]], true)
-try_loadstring("\27LJ\2\n¬\1\0\0\4\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\6\0009\0\a\0'\2\b\0B\0\2\1K\0\1\0\22TransparentEnable\bcmd\bvim\17extra_groups\1\0\1\17extra_groups\0\1\3\0\0\16NormalFloat\19NvimTreeNormal\nsetup\16transparent\frequire\0", "config", "nvim-transparent")
+try_loadstring("\27LJ\2\n‚\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\17extra_groups\1\0\1\17extra_groups\0\1\3\0\0\16NormalFloat\19NvimTreeNormal\nsetup\16transparent\frequire\0", "config", "nvim-transparent")
 time([[Config for nvim-transparent]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)

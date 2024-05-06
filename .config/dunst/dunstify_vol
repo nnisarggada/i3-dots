@@ -6,9 +6,6 @@
 
 sink_name="@DEFAULT_SINK@"
 source_name="@DEFAULT_SOURCE@"
-
-icon_path='/usr/share/icons/Papirus-Dark/16x16/panel/'
-
 sink_tag="string:x-dunst-stack-tag:sink"
 source_tag="string:x-dunst-stack-tag:source"
 
@@ -34,7 +31,6 @@ function sink_notification {
 		 -h string:hlcolor:$foreground \
                  -u low \
                  -h $sink_tag \
-                 -i "$sink_icon" \
                  "Volume" \
                  "$sink_volume%"
 }
