@@ -19,7 +19,7 @@ else
     yay && rm -rf yay-bin
 fi
 
-progams=("pass" "auto-cpufreq" "p7zip" "xcolor" "silicon" "man" "caffeine-ng" "ripgrep" "flatpak" "arandr" "linux-headers" "v4l2loopback-dkms" "nvidia" "nvidia-utils" "lib32-nvidia-utils" "xdg-desktop-portal-gtk" "network-manager-applet" "adwaita-dark" "nm-connection-editor" "ueberzug" "libinput-gestures" "xdotool" "ncdu" "mpd" "mpv" "autotiling" "bluez" "bluez-libs" "bluez-utils" "dunst" "git" "github-cli" "lxappearance" "gruvbox-dark-icons-gtk" "pavucontrol" "picom" "playerctl" "blueman" "qt5ct" "qt5-styleplugins" "gparted" "maim" "unzip" "zip" "copyq" "betterlockscreen" "polybar" "xorg-xinput" "firefox" "zsh" "alacritty" "pcmanfm" "htop" "neofetch" "brightnessctl" "ntfs-3g" "udisks2" "udiskie" "gvfs" "ttf-ms-fonts" "bibata-cursor-theme" "neovim" "nodejs" "npm" "lua" "python-pillow" "zathura" "gruvbox-dark-gtk" "polkit-gnome" "feh" "ttf-joypixels" "ttf-jetbrains-mono-nerd" "noto-fonts-emoji" "zathura-pdf-mupdf" "gtk-engine-murrine" "xclip" "python-pip" "mlocate" "zsh-syntax-highlighting" "libnotify" "jq" "acpi" "sxiv" "mission-center" "python-pywal" "python-pywalfox")
+progams=("j4-dmenu-desktop" "pass" "auto-cpufreq" "p7zip" "xcolor" "silicon" "man" "caffeine-ng" "ripgrep" "flatpak" "arandr" "linux-headers" "v4l2loopback-dkms" "nvidia" "nvidia-utils" "lib32-nvidia-utils" "xdg-desktop-portal-gtk" "network-manager-applet" "adwaita-dark" "nm-connection-editor" "ueberzug" "libinput-gestures" "xdotool" "ncdu" "mpd" "mpv" "autotiling" "bluez" "bluez-libs" "bluez-utils" "dunst" "git" "github-cli" "lxappearance" "gruvbox-dark-icons-gtk" "pavucontrol" "picom" "playerctl" "blueman" "qt5ct" "qt5-styleplugins" "gparted" "maim" "unzip" "zip" "copyq" "betterlockscreen" "polybar" "xorg-xinput" "firefox" "zsh" "alacritty" "pcmanfm" "htop" "neofetch" "brightnessctl" "ntfs-3g" "udisks2" "udiskie" "gvfs" "ttf-ms-fonts" "bibata-cursor-theme" "neovim" "nodejs" "npm" "lua" "python-pillow" "zathura" "gruvbox-dark-gtk" "polkit-gnome" "feh" "ttf-joypixels" "ttf-jetbrains-mono-nerd" "noto-fonts-emoji" "zathura-pdf-mupdf" "gtk-engine-murrine" "xclip" "python-pip" "mlocate" "zsh-syntax-highlighting" "libnotify" "jq" "acpi" "sxiv" "mission-center" "python-pywal" "python-pywalfox")
 
 yay -R --noconfirm i3lock
 yay -R --noconfirm dmenu
@@ -37,7 +37,7 @@ done
 if type "dmenu" &> /dev/null; then
     echo "dmenu installed."
 else
-    git clone https://github.com/muff1nman/dmenu2
+    git clone https://github.com/nnisarggada/dmenu2
     cd dmenu2
     sudo make clean install
     cd ../
