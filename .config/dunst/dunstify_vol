@@ -2,10 +2,9 @@
 
 . ~/.cache/wal/colors.sh
 
-# By abxh (github)
-
 sink_name="@DEFAULT_SINK@"
 source_name="@DEFAULT_SOURCE@"
+
 sink_tag="string:x-dunst-stack-tag:sink"
 source_tag="string:x-dunst-stack-tag:source"
 
@@ -14,18 +13,6 @@ vol_max=100
 function sink_notification {
 	sink_muted=$(pactl get-sink-mute $sink_name | awk '{print $2}')
 	sink_volume=$(pactl get-sink-volume $sink_name | awk '{print $5}' | cut -d '%' -f 1)
-
-        if [[ "$sink_muted" == "yes" ]] ; then
-                sink_icon=$icon_path'audio-volume-muted.svg'
-        else
-                if [[ "$sink_volume" -lt 34 ]] ; then
-                        sink_icon=$icon_path'audio-volume-low.svg'
-                elif [[ "$sink_volume" -lt 67 ]] ; then
-                        sink_icon=$icon_path'audio-volume-medium.svg'
-                else
-                        sink_icon=$icon_path'audio-volume-high.svg'
-                fi
-        fi
 
 	dunstify -h int:value:$(( $sink_volume*100/$vol_max)) \
 		 -h string:hlcolor:$foreground \
@@ -39,16 +26,13 @@ function source_notification {
 	source_muted=$(pactl get-source-mute $source_name | awk '{print $2}')
 
 	if [ $source_muted == "yes" ] ; then
-		source_icon=$icon_path'audio-input-microphone-muted.svg'
 		notif_desc="Muted"
 	else
-		source_icon=$icon_path'audio-input-microphone-none-panel.svg'
 		notif_desc="Unmuted"
 	fi
 
 	dunstify -u low \
 		 -h $source_tag \
-		 -i "$source_icon" \
 		 "Microphone" \
 		 "$notif_desc"
 }
