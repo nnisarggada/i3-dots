@@ -56,6 +56,8 @@ sudo cp .xinitrc ~/
 sudo cp .viminfo ~/
 sudo cp .vimrc.plug ~/
 
+mkdir pix/ss
+
 sudo cp 40-libinput.conf /usr/share/X11/xorg.conf.d/
 sudo cp environment /etc/
 
