@@ -1,6 +1,6 @@
 #!/bin/sh
 
-wall=$(find ~/pix/walls/ -type f -name "*" | shuf -n 1)
+wall=$(find ~/pix/walls/ -type f -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" | shuf -n 1)
 
 feh --bg-fill "$wall" &
 
