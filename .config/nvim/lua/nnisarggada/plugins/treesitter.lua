@@ -24,11 +24,10 @@ treesitter.setup({
     "bash",
     "lua",
     "vim",
+    "astro",
   },
   -- auto install above language parsers
   auto_install = true,
-
-  ignore_install = { "astro" },
 
   vim.filetype.add({
     extension = {
