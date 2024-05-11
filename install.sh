@@ -58,7 +58,7 @@ sudo cp .vimrc.plug ~/
 
 mkdir pix/ss
 
-sudo cp 40-libinput.conf /usr/share/X11/xorg.conf.d/
+sudo cp -r xorg.conf.d /etc/X11/xorg.conf.d/
 sudo cp environment /etc/
 
 sed -i "s/nnisarggada/$USER/g" ~/.config/wal/templates/dunstrc
