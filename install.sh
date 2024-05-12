@@ -180,6 +180,8 @@ sudo npm i -g pnpm
 pnpm setup
 source ~/.zshrc
 pnpm i -g pnpm
+pnpm i -g pocketnaut
+pnpm i -g better-commits
 
 sudo auto-cpufreq --install
 
