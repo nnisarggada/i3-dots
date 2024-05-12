@@ -143,14 +143,7 @@ for_window [all] border radius 0
 for_window [all] title_format " "
 for_window [class="floating"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="missioncenter"] floating enable
-for_window [class="copyq"] floating enable
-for_window [class="Blueman-manager"] floating enable
-for_window [class="Lxappearance"] floating enable
-for_window [class="qt5ct"] floating enable
-for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pcmanfm"] floating enable
-for_window [class="GParted"] floating enable
 for_window [class="qBittorrent"] floating enable
 for_window [class="csgo_linux64"] move to workspace $ws9
 
@@ -185,16 +178,12 @@ bindsym $mod+Ctrl+Shift+s exec ss -s &
 bindsym $mod+z exec polybar-msg cmd toggle &
 bindsym $mod+minus scratchpad show &
 bindsym $mod+Shift+minus move scratchpad &
-bindsym $mod+v exec copyq show && i3-msg move position center &
+bindsym $mod+v exec ~/.local/bin/cliphist &
 
 exec_always --no-startup-id libinput-gestures-setup start &
 exec_always --no-startup-id xmodmap -e "clear lock" &
 exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = BackSpace"  &
-exec_always --no-startup-id killall copyq ; copyq &
 exec_always --no-startup-id killall polybar ; polybar &
-exec_always --no-startup-id caffeine kill; caffeine &
-exec_always --no-startup-id nm-applet &
-exec_always --no-startup-id blueman-applet &
 exec_always --no-startup-id autotiling &
 exec_always --no-startup-id newlook &
 exec_always --no-startup-id picom &
