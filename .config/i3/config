@@ -3,7 +3,7 @@ set $mod Mod4
 font JetBrains Mono Nerd Font 12
 
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id batmon -n -L 20 -s ~/.local/share/sounds/notification.ogg -v 75
+exec --no-startup-id ~/.local/bin/batmon -n -L 20 -s ~/.local/share/sounds/notification.ogg -v 75
 exec --no-startup-id ~/.local/bin/drink_water
 
 floating_modifier $mod
@@ -14,7 +14,6 @@ bindsym $mod+Shift+Return exec alacritty --class floating
 bindsym $mod+q kill
 
 bindsym $mod+d exec dmen_run -p "RUN:"
-bindsym $mod+Shift+d exec j4-dmenu-desktop --dmenu='~/.local/bin/dmen -p "APPS:"'
 bindsym $mod+Shift+q exec system_action
 
 bindsym $mod+h focus left
@@ -128,7 +127,7 @@ bindsym $mod+Shift+m exec ~/.config/dunst/dunstify_vol -y
 bindsym XF86MonBrightnessUp exec ~/.config/dunst/dunstify_br -i
 bindsym XF86MonBrightnessDown exec ~/.config/dunst/dunstify_br -d
 
-bindsym XF86TouchpadToggle exec ~/.config/toggletouchpad.sh
+bindsym XF86TouchpadToggle exec ~/.local/bin/toggletouchpad
 
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause

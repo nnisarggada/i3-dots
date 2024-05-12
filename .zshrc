@@ -1,6 +1,6 @@
 # Enable colors and change prompt:
 autoload -U colors && colors
-PS1="%B%{$fg[magenta]%}%~%{$fg[red]%} >%{$reset_color%}%b "
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # History in cache directory:
 HISTSIZE=10000
@@ -82,9 +82,13 @@ esac
 # pnpm end
 
 cat ~/.cache/wal/sequences
+
 setopt autocd
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias gc='better-commits'
+
+alias gc='git clone --depth=1'
+
+alias bc='better-commits'
 alias pn='pocketnaut'
