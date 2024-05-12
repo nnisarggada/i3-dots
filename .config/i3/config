@@ -3,16 +3,19 @@ set $mod Mod4
 font JetBrains Mono Nerd Font 12
 
 exec --no-startup-id dex --autostart --environment i3 &
+exec --no-startup-id lxsession &
+exec --no-startup-id ~/.local/bin/drink_water &
+exec --no-startup-id ~/.local/bin/batmon -n -L 20 -s ~/.local/share/sounds/notification.ogg -v 75 &
 
 floating_modifier $mod
 
-bindsym $mod+Return exec alacritty
-bindsym $mod+Shift+Return exec alacritty --class floating
+bindsym $mod+Return exec --no-startup-id alacritty &
+bindsym $mod+Shift+Return exec --no-startup-id alacritty --class floating &
 
 bindsym $mod+q kill
 
-bindsym $mod+d exec dmen_run -p "RUN:"
-bindsym $mod+Shift+q exec system_action
+bindsym $mod+d exec dmen_run -p "RUN:" &
+bindsym $mod+Shift+q exec system_action &
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -115,22 +118,22 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 client.background       $bg
 
-bindsym XF86AudioRaiseVolume exec ~/.config/dunst/dunstify_vol -i 10
-bindsym XF86AudioLowerVolume exec ~/.config/dunst/dunstify_vol -d 10
-bindsym XF86AudioMute exec ~/.config/dunst/dunstify_vol -t
-bindsym $mod+Shift+o exec ~/.config/dunst/dunstify_vol -t 
-bindsym XF86AudioMicMute exec ~/.config/dunst/dunstify_vol -y
-bindsym $mod+Shift+m exec ~/.config/dunst/dunstify_vol -y
+bindsym XF86AudioRaiseVolume exec ~/.config/dunst/dunstify_vol -i 10 &
+bindsym XF86AudioLowerVolume exec ~/.config/dunst/dunstify_vol -d 10 &
+bindsym XF86AudioMute exec ~/.config/dunst/dunstify_vol -t &
+bindsym $mod+Shift+o exec ~/.config/dunst/dunstify_vol -t &
+bindsym XF86AudioMicMute exec ~/.config/dunst/dunstify_vol -y &
+bindsym $mod+Shift+m exec ~/.config/dunst/dunstify_vol -y &
 
-bindsym XF86MonBrightnessUp exec ~/.config/dunst/dunstify_br -i
-bindsym XF86MonBrightnessDown exec ~/.config/dunst/dunstify_br -d
+bindsym XF86MonBrightnessUp exec ~/.config/dunst/dunstify_br -i &
+bindsym XF86MonBrightnessDown exec ~/.config/dunst/dunstify_br -d &
 
-bindsym XF86TouchpadToggle exec ~/.local/bin/toggletouchpad
+bindsym XF86TouchpadToggle exec ~/.local/bin/toggletouchpad &
 
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioPause exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause &
+bindsym XF86AudioPause exec playerctl play-pause &
+bindsym XF86AudioNext exec playerctl next &
+bindsym XF86AudioPrev exec playerctl previous &
 
 gaps inner 10
 
@@ -157,7 +160,7 @@ for_window [class="^Unity$" title="^Hold On$"] floating enable
 for_window [class="^Unity$" title="^Preparing Package$"] floating enable
 for_window [class="^Unity$" title="^Importing Package$"] floating enable
 
-# https://github.com/ValveSoftware/steam-for-linux/issues/1040
+# Steam
 for_window [class="steam" title="^Friends"] floating enable
 for_window [class="steam" title="Steam - News"] floating enable
 for_window [class="steam" title=".* - Chat"] floating enable
@@ -170,26 +173,26 @@ for_window [class="steam" title="Steam Guard - Computer Authorization Required"]
 for_window [title="Steam Keyboard"] floating enable
 
 
-bindsym $mod+Mod1+l exec playerctl pause & betterlockscreen -l dim -l --time-format "%I:%M %p"
-bindsym $mod+b exec firefox
-bindsym $mod+e exec pcmanfm
-bindsym $mod+c exec i3-msg move position center
-bindsym $mod+period exec emoji
-bindsym Print exec ss
-bindsym Shift+Print exec ss -s
-bindsym $mod+Shift+s exec ss
-bindsym $mod+Ctrl+Shift+s exec ss -s
-bindsym $mod+z exec polybar-msg cmd toggle
-bindsym $mod+minus scratchpad show
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+v exec copyq show && i3-msg move position center
+bindsym $mod+Mod1+l exec playerctl pause & betterlockscreen -l dim -l --time-format "%I:%M %p" &
+bindsym $mod+b exec firefox &
+bindsym $mod+e exec pcmanfm &
+bindsym $mod+c exec i3-msg move position center &
+bindsym $mod+period exec emoji &
+bindsym Print exec ss &
+bindsym Shift+Print exec ss -s &
+bindsym $mod+Shift+s exec ss &
+bindsym $mod+Ctrl+Shift+s exec ss -s &
+bindsym $mod+z exec polybar-msg cmd toggle &
+bindsym $mod+minus scratchpad show &
+bindsym $mod+Shift+minus move scratchpad &
+bindsym $mod+v exec copyq show && i3-msg move position center &
 
 exec_always --no-startup-id libinput-gestures-setup start &
 exec_always --no-startup-id xmodmap -e "clear lock" &
 exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = BackSpace"  &
 exec_always --no-startup-id killall copyq ; copyq &
 exec_always --no-startup-id killall polybar ; polybar &
-exec_always --no-startup-id caffeine &
+exec_always --no-startup-id caffeine kill; caffeine &
 exec_always --no-startup-id nm-applet &
 exec_always --no-startup-id blueman-applet &
 exec_always --no-startup-id autotiling &
