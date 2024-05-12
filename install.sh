@@ -12,7 +12,7 @@ mkdir ~/tmplts
 if type "yay" &> /dev/null; then
     echo "yay installed."
 else
-    git clone https://aur.archlinux.org/yay-bin
+    git clone --depth=1 https://aur.archlinux.org/yay-bin
     cd yay-bin
     makepkg -si
     cd ../
