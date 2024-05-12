@@ -2,10 +2,10 @@ set $mod Mod4
 
 font JetBrains Mono Nerd Font 12
 
-exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id lxsession
-exec --no-startup-id ~/.local/bin/batmon -n -L 20 -s ~/.local/share/sounds/notification.ogg -v 75
-exec --no-startup-id ~/.local/bin/drink_water
+exec --no-startup-id dex --autostart --environment i3 &
+exec --no-startup-id lxsession &
+exec --no-startup-id ~/.local/bin/batmon -n -L 20 -s ~/.local/share/sounds/notification.ogg -v 75 &
+exec --no-startup-id ~/.local/bin/drink_water &
 
 floating_modifier $mod
 
@@ -173,11 +173,6 @@ for_window [class="steam" title="Steam Guard - Computer Authorization Required"]
 for_window [title="Steam Keyboard"] floating enable
 
 
-exec_always --no-startup-id libinput-gestures-setup start
-exec_always --no-startup-id xinput set-prop "SYNA328B:00 06CB:CD50 Touchpad" "libinput Tapping Enabled" 1
-exec_always --no-startup-id xinput set-prop "SYNA328B:00 06CB:CD50 Touchpad" "libinput Natural Scrolling Enabled" 1
-exec_always --no-startup-id xmodmap -e "clear lock"
-exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = BackSpace" 
 bindsym $mod+Mod1+l exec playerctl pause & betterlockscreen -l dim -l --time-format "%I:%M %p"
 bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
@@ -192,6 +187,9 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+v exec copyq show && i3-msg move position center
 
+exec_always --no-startup-id libinput-gestures-setup start &
+exec_always --no-startup-id xmodmap -e "clear lock" &
+exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = BackSpace"  &
 exec_always --no-startup-id killall copyq ; copyq &
 exec_always --no-startup-id killall polybar ; polybar &
 exec_always --no-startup-id caffeine &

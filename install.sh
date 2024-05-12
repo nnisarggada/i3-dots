@@ -163,7 +163,7 @@ sudo cp .gtkrc-2.0 ~/
 
 mkdir pix/ss
 
-sudo cp -r xorg.conf.d /etc/X11/xorg.conf.d/
+sudo cp -r xorg.conf.d /etc/X11/
 sudo cp environment /etc/
 
 sed -i "s/nnisarggada/$USER/g" ~/.config/wal/templates/dunstrc
