@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 network_print() {
     connection_list=$(nmcli -t -f name,type,device,state connection show --order name --active 2>/dev/null | grep -v ':loopback:')
@@ -20,7 +20,7 @@ network_print() {
                         description="$description - %{F#f9cc18}$signal%%{F-}"
                     fi
                 elif [ "$type" = "802-3-ethernet" ]; then
-                    icon="󰖩 "
+                    icon="󰈀 "
 
                     speed="$(cat /sys/class/net/"$device"/speed)"
                     if [ "$speed" -ne -1 ]; then
