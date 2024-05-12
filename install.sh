@@ -32,9 +32,9 @@ utils=("htop" "wget" "curl" "openssh" "wireless_tools" "smartmontools" "wpa_supp
 
 i3=("i3-wm" "autotiling" "python-pillow")
 
-shell=("zsh" "zsh-syntax-highlighting")
+shell=("dash" "zsh" "zsh-syntax-highlighting")
 
-appearance=("adwaita-dark" "gruvbox-dark-icons-gtk" "neofetch" "gruvbox-dark-gtk" "gtk-engine-murrine" "qt5-styleplugins" "python-pywal" "python-pywalfox")
+appearance=("adwaita-dark" "arc-gtk-theme" "neofetch" "papirus-icon-theme" "gtk-engine-murrine" "qt5-styleplugins" "python-pywal" "python-pywalfox")
 
 fonts=("ttf-joypixels" "ttf-jetbrains-mono-nerd" "ttf-ms-fonts" "noto-fonts-emoji")
 
@@ -184,4 +184,6 @@ pnpm i -g pnpm
 sudo auto-cpufreq --install
 
 sudo chown $USER ~/ -R
+sudo rm -rf /bin/sh
+sudo ln -s dash /bin/sh
 chsh -s /usr/bin/zsh
