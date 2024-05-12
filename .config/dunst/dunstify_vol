@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 . ~/.cache/wal/colors.sh
 
