@@ -40,7 +40,7 @@ fonts=("ttf-joypixels" "ttf-jetbrains-mono-nerd" "ttf-ms-fonts" "noto-fonts-emoj
 
 dev=("nodejs" "npm" "lua" "python-pip")
 
-apps=("onlyoffice-bin" "yt-dlp" "pass" "silicon" "arandr" "dunst" "github-cli" "picom" "betterlockscreen" "polybar" "firefox" "alacritty" "pcmanfm" "zathura" "feh" "zathura-pdf-mupdf")
+apps=("onlyoffice-bin" "yt-dlp" "pass" "silicon" "arandr" "dunst" "github-cli" "picom" "copyq" "betterlockscreen" "polybar" "firefox" "alacritty" "pcmanfm" "zathura" "feh" "zathura-pdf-mupdf")
 
 for program in "${needed[@]}"; do
 	if ! yay -Q "$program" >/dev/null 2>&1; then
