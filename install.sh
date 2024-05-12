@@ -34,7 +34,7 @@ i3=("i3-wm" "autotiling" "python-pillow")
 
 shell=("zsh" "zsh-syntax-highlighting")
 
-appearance=("adwaita-dark" "gruvbox-dark-icons-gtk" "neofetch" "gruvbox-dark-gtk" "gtk-engine-murrine"  "python-pywal" "python-pywalfox")
+appearance=("adwaita-dark" "gruvbox-dark-icons-gtk" "neofetch" "gruvbox-dark-gtk" "gtk-engine-murrine" "qt5-styleplugins" "python-pywal" "python-pywalfox")
 
 fonts=("ttf-joypixels" "ttf-jetbrains-mono-nerd" "ttf-ms-fonts" "noto-fonts-emoji")
 
@@ -159,6 +159,7 @@ sudo cp -r pix/ ~/
 sudo cp .zshrc ~/
 sudo cp .xprofile ~/
 sudo cp .xinitrc ~/
+sudo cp .gtkrc-2.0 ~/
 
 mkdir pix/ss
 
