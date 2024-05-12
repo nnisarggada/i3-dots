@@ -82,4 +82,9 @@ if [ -x "$script" -a ! -d "$script" ]; then
     . "$script"
 fi
 
+lxsession &
+
+~/.local/bin/batmon -n -L 20 -s ~/.local/share/sounds/notification.ogg -v 75 &
+~/.local/bin/drink_water &
+
 exec i3
