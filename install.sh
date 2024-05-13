@@ -20,15 +20,13 @@ else
 fi
 
 
-needed=("abseil-cpp" "acl" "alsa-card-profiles" "alsa-lib" "alsa-topology-conf" "alsa-ucm-conf" "archlinux-keyring" "argon2" "attr" "audit" "autoconf" "automake" "avahi" "base" "base-devel" "bash" "binutils" "bison" "bluez-libs" "brotli" "btrfs-progs" "bzip2" "ca-certificates" "ca-certificates-mozilla" "ca-certificates-utils" "coreutils" "cryptsetup" "curl" "db5.3" "dbus" "dbus-broker" "dbus-broker-units" "debugedit" "default-cursors" "device-mapper" "diffutils" "duktape" "e2fsprogs" "efibootmgr" "efivar" "expat" "fakeroot" "file" "filesystem" "findutils" "flac" "flex" "gawk" "gc" "gcc" "gcc-libs" "gdbm" "gettext" "git" "glib2" "glibc" "gmp" "gnupg" "gnutls" "gpgme" "gpm" "grep" "groff" "gst-plugin-pipewire" "gst-plugins-base-libs" "gstreamer" "guile" "gzip" "hwdata" "iana-etc" "icu" "intel-ucode" "iproute2" "iptables" "iputils" "iso-codes" "jansson" "json-c" "kbd" "keyutils" "kmod" "krb5" "lame" "libarchive" "libassuan" "libasyncns" "libbpf" "libcamera" "libcamera-ipa" "libcap" "libcap-ng" "libdaemon" "libdrm" "libedit" "libelf" "libevent" "libfdk-aac" "libffi" "libfreeaptx" "libgcrypt" "libglvnd" "libgpg-error" "libgudev" "libidn2" "libisl" "libksba" "liblc3" "libldac" "libldap" "libluv" "libmm-glib" "libmnl" "libmpc" "libmysofa" "libndp" "libnetfilter_conntrack" "libnewt" "libnfnetlink" "libnftnl" "libnghttp2" "libnghttp3" "libnl" "libnm" "libnsl" "libogg" "libomxil-bellagio" "libp11-kit" "libpcap" "libpciaccess" "libpgm" "libpipewire" "libpsl" "libpulse" "libsasl" "libseccomp" "libsecret" "libsndfile" "libsodium" "libssh2" "libsysprof-capture" "libtasn1" "libteam" "libtermkey" "libtirpc" "libtool" "libunistring" "libunwind" "libusb" "libuv" "libverto" "libvorbis" "libvterm" "libwireplumber" "libx11" "libxau" "libxcb" "libxcrypt" "libxdmcp" "libxext" "libxfixes" "libxi" "libxml2" "libxshmfence" "libxv" "libxxf86vm" "libyaml" "licenses" "lilv" "linux" "linux-api-headers" "linux-firmware" "linux-firmware-whence" "llvm-libs" "lm_sensors" "lua" "luajit" "lv2" "lz4" "lzo" "m4" "make" "mesa" "mkinitcpio" "mkinitcpio-busybox" "mobile-broadband-provider-info" "mpfr" "mpg123" "msgpack-c" "ncurses" "neovim" "nettle" "networkmanager" "npth" "nspr" "nss" "openssl" "opus" "orc" "p11-kit" "pacman" "pacman-mirrorlist" "pam" "pambase" "patch" "pciutils" "pcre" "pcre2" "pcsclite" "perl" "perl-error" "perl-mailtools" "perl-timedate" "pinentry" "pipewire" "pipewire-alsa" "pipewire-audio" "pipewire-jack" "pipewire-pulse" "pkgconf" "polkit" "lxsession" "popt" "procps-ng" "psmisc" "readline" "sbc" "sed" "serd" "shadow" "slang" "sof-firmware" "sord" "sqlite" "sratom" "sudo" "systemd" "systemd-libs" "systemd-sysvcompat" "tar" "texinfo" "tpm2-tss" "tree-sitter" "tzdata" "unibilium" "util-linux" "util-linux-libs" "wayland" "webrtc-audio-processing-1" "which" "wireplumber" "wpa_supplicant" "xcb-proto" "xorgproto" "xz" "zeromq" "zix" "zlib" "zram-generator" "zstd")
-
 graphics=("intel-media-driver" "mesa" "xf86-video-amdgpu" "xf86-video-vmware" "xf86-video-ati" "xf86-video-nouveau" "libva-intel-driver" "vulkan-intel" "libva-mesa-driver" "vulkan-radeon" "nvidia" "nvidia-utils" "lib32-nvidia-utils")
 
 xorg=("xorg-server" "xorg-xinit" "xdg-utils" "xorg-xinput" "xorg-xrandr")
 
 editors=("vi" "vim" "neovim")
 
-utils=("htop" "wget" "curl" "openssh" "wireless_tools" "smartmontools" "wpa_supplicant" "iwd" "p7zip" "auto-cpufreq" "man" "ripgrep" "flatpak" "linux-headers" "v4l2loopback-dkms"  "xdg-desktop-portal-gtk" "ueberzug" "libinput-gestures" "xdotool" "ncdu" "mpd" "mpv" "bluez" "bluez-libs" "bluez-utils" "xclip" "xcolor" "rsync" "git" "pavucontrol" "playerctl" "blueman" "maim" "unzip" "zip" "brightnessctl" "ntfs-3g" "udisks2" "udiskie" "gvfs" "mlocate" "libnotify" "jq" "acpi" "sxiv")
+utils=("htop" "wget" "curl" "openssh" "wireless_tools" "smartmontools" "wpa_supplicant" "iwd" "p7zip" "auto-cpufreq" "man" "ripgrep" "flatpak" "linux-headers" "v4l2loopback-dkms"  "xdg-desktop-portal-gtk" "ueberzug" "libinput-gestures" "xdotool" "ncdu" "mpd" "mpv" "bluez" "bluez-libs" "bluez-utils" "xclip" "xcolor" "rsync" "git" "pavucontrol" "playerctl" "blueman" "maim" "unzip" "zip" "brightnessctl" "ntfs-3g" "udisks2" "udiskie" "gvfs" "mlocate" "libnotify" "jq" "acpi" "sxiv" "network-manager-applet")
 
 i3=("i3-wm" "autotiling" "python-pillow")
 
@@ -41,16 +39,6 @@ fonts=("ttf-joypixels" "ttf-jetbrains-mono-nerd" "ttf-ms-fonts" "noto-fonts-emoj
 dev=("nodejs" "npm" "lua" "python-pip")
 
 apps=("onlyoffice-bin" "yt-dlp" "pass" "silicon" "arandr" "dunst" "github-cli" "picom" "betterlockscreen" "polybar" "firefox" "alacritty" "pcmanfm" "zathura" "feh" "zathura-pdf-mupdf")
-
-for program in "${needed[@]}"; do
-	if ! yay -Q "$program" >/dev/null 2>&1; then
-		echo "Installing $program..."
-		yay -S --noconfirm "$program"
-		echo "$program installed successfully!"
-	else
-		echo "$program already installed."
-	fi
-done
 
 for program in "${graphics[@]}"; do
 	if ! yay -Q "$program" >/dev/null 2>&1; then
