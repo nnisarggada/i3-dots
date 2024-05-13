@@ -17,6 +17,8 @@ bindsym $mod+q kill
 
 bindsym $mod+d exec --no-startup-id dmen_run -p "RUN:" &
 bindsym $mod+Shift+q exec --no-startup-id system_action &
+bindsym $mod+v exec --no-startup-id ~/.local/bin/sclip &
+bindsym $mod+p exec --no-startup-id ~/.local/bin/passmenu &
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -179,7 +181,6 @@ bindsym $mod+Ctrl+Shift+s exec --no-startup-id ss -s &
 bindsym $mod+z exec --no-startup-id polybar-msg cmd toggle &
 bindsym $mod+minus scratchpad show &
 bindsym $mod+Shift+minus move scratchpad &
-bindsym $mod+v exec --no-startup-id ~/.local/bin/sclip &
 
 exec_always --no-startup-id libinput-gestures-setup start &
 exec_always --no-startup-id xmodmap -e "clear lock" &

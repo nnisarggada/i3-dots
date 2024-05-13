@@ -1,0 +1,3 @@
+#!/bin/bash
+
+tac /tmp/cliphist.txt | ~/.local/bin/dmen -p "COPY:" -l 7 | xclip -sel c
