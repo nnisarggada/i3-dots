@@ -15,8 +15,8 @@ bindsym $mod+Shift+Return exec --no-startup-id alacritty --class floating &
 
 bindsym $mod+q kill
 
-bindsym $mod+d exec dmen_run -p "RUN:" &
-bindsym $mod+Shift+q exec system_action &
+bindsym $mod+d exec --no-startup-id dmen_run -p "RUN:" &
+bindsym $mod+Shift+q exec --no-startup-id system_action &
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -119,29 +119,29 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 client.background       $bg
 
-bindsym XF86AudioRaiseVolume exec ~/.config/dunst/dunstify_vol -i 10 &
-bindsym XF86AudioLowerVolume exec ~/.config/dunst/dunstify_vol -d 10 &
-bindsym XF86AudioMute exec ~/.config/dunst/dunstify_vol -t &
-bindsym $mod+Shift+o exec ~/.config/dunst/dunstify_vol -t &
-bindsym XF86AudioMicMute exec ~/.config/dunst/dunstify_vol -y &
-bindsym $mod+Shift+m exec ~/.config/dunst/dunstify_vol -y &
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/dunst/dunstify_vol -i 10 &
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/dunst/dunstify_vol -d 10 &
+bindsym XF86AudioMute exec --no-startup-id ~/.config/dunst/dunstify_vol -t &
+bindsym $mod+Shift+o exec --no-startup-id ~/.config/dunst/dunstify_vol -t &
+bindsym XF86AudioMicMute exec --no-startup-id ~/.config/dunst/dunstify_vol -y &
+bindsym $mod+Shift+m exec --no-startup-id ~/.config/dunst/dunstify_vol -y &
 
-bindsym XF86MonBrightnessUp exec ~/.config/dunst/dunstify_br -i &
-bindsym XF86MonBrightnessDown exec ~/.config/dunst/dunstify_br -d &
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/dunst/dunstify_br -i &
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/dunst/dunstify_br -d &
 
-bindsym XF86TouchpadToggle exec ~/.local/bin/toggletouchpad &
+bindsym XF86TouchpadToggle exec --no-startup-id ~/.local/bin/toggletouchpad &
 
-bindsym XF86AudioPlay exec playerctl play-pause &
-bindsym XF86AudioPause exec playerctl play-pause &
-bindsym XF86AudioNext exec playerctl next &
-bindsym XF86AudioPrev exec playerctl previous &
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause &
+bindsym XF86AudioPause exec --no-startup-id playerctl play-pause &
+bindsym XF86AudioNext exec --no-startup-id playerctl next &
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous &
 
 gaps inner 10
 
 for_window [urgent=latest] focus
-for_window [all] border pixel 2
+for_window [all] border pixel 3
 for_window [all] border radius 0
-for_window [all] title_format " "
+for_window [all] title_format ""
 for_window [class="floating"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Pcmanfm"] floating enable
@@ -167,19 +167,19 @@ for_window [class="steam" title="Steam Guard - Computer Authorization Required"]
 for_window [title="Steam Keyboard"] floating enable
 
 
-bindsym $mod+Mod1+l exec playerctl pause & betterlockscreen -l dim -l --time-format "%I:%M %p" &
+bindsym $mod+Mod1+l exec --no-startup-id  playerctl pause & betterlockscreen -l dim -l --time-format "%I:%M %p" &
 bindsym $mod+b exec firefox &
 bindsym $mod+e exec pcmanfm &
-bindsym $mod+c exec i3-msg move position center &
-bindsym $mod+period exec emoji &
-bindsym Print exec ss &
-bindsym Shift+Print exec ss -s &
-bindsym $mod+Shift+s exec ss &
-bindsym $mod+Ctrl+Shift+s exec ss -s &
-bindsym $mod+z exec polybar-msg cmd toggle &
+bindsym $mod+c exec --no-startup-id  i3-msg move position center &
+bindsym $mod+period exec --no-startup-id  emoji &
+bindsym Print exec --no-startup-id ss &
+bindsym Shift+Print exec --no-startup-id ss -s &
+bindsym $mod+Shift+s exec --no-startup-id ss &
+bindsym $mod+Ctrl+Shift+s exec --no-startup-id ss -s &
+bindsym $mod+z exec --no-startup-id polybar-msg cmd toggle &
 bindsym $mod+minus scratchpad show &
 bindsym $mod+Shift+minus move scratchpad &
-bindsym $mod+v exec ~/.local/bin/cliphist &
+bindsym $mod+v exec --no-startup-id ~/.local/bin/sclip &
 
 exec_always --no-startup-id libinput-gestures-setup start &
 exec_always --no-startup-id xmodmap -e "clear lock" &
