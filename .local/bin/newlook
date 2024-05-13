@@ -1,6 +1,10 @@
 #!/bin/sh
 
-wall=$(find ~/pix/walls/ -type f -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" | shuf -n 1)
+if [ -z "$1" ]; then
+  wall=$(find ~/pix/walls/ -type f -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" | shuf -n 1)
+else
+  wall="$1"
+fi
 
 feh --bg-fill "$wall" &
 

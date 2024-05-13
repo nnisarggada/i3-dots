@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+  echo "Usage: share <file> <link> <time>"
+  exit 1
+fi
+
+curl -F "file=@$1" -F "link=$2" -F "time=$3" https://share.nnisarg.in
