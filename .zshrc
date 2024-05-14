@@ -69,6 +69,9 @@ bindkey '^e' edit-command-line
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+    exec startx
+fi
 
 #My config
 export PATH=$HOME/.local/bin:$PATH
@@ -82,6 +85,9 @@ esac
 # pnpm end
 
 cat ~/.cache/wal/sequences
+
+source ~/.cache/wal/colors.sh
+export polybar_bg="#22${color0/'#'}"
 
 setopt autocd
 
