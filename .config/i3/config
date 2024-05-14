@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font JetBrains Mono Nerd Font 12
+font JetBrains Mono NF 12
 
 exec --no-startup-id dex --autostart --environment i3 &
 exec --no-startup-id lxsession &
@@ -179,13 +179,14 @@ bindsym Shift+Print exec --no-startup-id ss -s &
 bindsym $mod+Shift+s exec --no-startup-id ss &
 bindsym $mod+Ctrl+Shift+s exec --no-startup-id ss -s &
 bindsym $mod+z exec --no-startup-id polybar-msg cmd toggle &
-bindsym $mod+minus scratchpad show &
-bindsym $mod+Shift+minus move scratchpad &
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
 
 exec_always --no-startup-id libinput-gestures-setup start &
 exec_always --no-startup-id xmodmap -e "clear lock" &
 exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = BackSpace"  &
 exec_always --no-startup-id killall polybar ; polybar &
+exec_always --no-startup-id caffeine kill ; caffeine &
 exec_always --no-startup-id autotiling &
 exec_always --no-startup-id newlook &
 exec_always --no-startup-id picom &

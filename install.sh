@@ -26,7 +26,7 @@ xorg=("xorg-server" "xorg-xinit" "xdg-utils" "xorg-xinput" "xorg-xrandr")
 
 editors=("vi" "vim" "neovim")
 
-utils=("htop" "wget" "curl" "openssh" "wireless_tools" "smartmontools" "wpa_supplicant" "iwd" "p7zip" "auto-cpufreq" "man" "ripgrep" "flatpak" "linux-headers" "v4l2loopback-dkms"  "xdg-desktop-portal-gtk" "ueberzug" "libinput-gestures" "xdotool" "ncdu" "mpd" "mpv" "bluez" "bluez-libs" "bluez-utils" "xclip" "xcolor" "rsync" "git" "pavucontrol" "playerctl" "blueman" "maim" "unzip" "zip" "brightnessctl" "ntfs-3g" "udisks2" "udiskie" "gvfs" "mlocate" "libnotify" "jq" "acpi" "sxiv")
+utils=("htop" "wget" "curl" "openssh" "wireless_tools" "smartmontools" "wpa_supplicant" "iwd" "p7zip" "auto-cpufreq" "man" "ripgrep" "flatpak" "linux-headers" "v4l2loopback-dkms"  "xdg-desktop-portal-gtk" "ueberzug" "libinput-gestures" "xdotool" "ncdu" "mpd" "mpv" "bluez" "bluez-libs" "bluez-utils" "xclip" "xcolor" "rsync" "git" "pavucontrol" "playerctl" "blueman" "maim" "unzip" "zip" "brightnessctl" "ntfs-3g" "udisks2" "udiskie" "gvfs" "mlocate" "libnotify" "jq" "acpi" "sxiv" "caffeine-ng" "pass" "feh" "betterlockscreen")
 
 i3=("i3-wm" "autotiling" "python-pillow")
 
@@ -38,7 +38,7 @@ fonts=("ttf-joypixels" "ttf-jetbrains-mono-nerd" "ttf-ms-fonts" "noto-fonts-emoj
 
 dev=("nodejs" "npm" "lua" "python-pip")
 
-apps=("onlyoffice-bin" "yt-dlp" "pass" "silicon" "arandr" "dunst" "github-cli" "picom" "betterlockscreen" "polybar" "firefox" "alacritty" "pcmanfm" "zathura" "feh" "zathura-pdf-mupdf")
+apps=("onlyoffice-bin" "yt-dlp" "silicon" "arandr" "dunst" "github-cli" "picom" "polybar" "firefox" "alacritty" "pcmanfm" "zathura" "zathura-pdf-mupdf")
 
 for program in "${graphics[@]}"; do
 	if ! yay -Q "$program" >/dev/null 2>&1; then
