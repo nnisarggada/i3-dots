@@ -189,6 +189,6 @@ exec_always --no-startup-id killall polybar ; polybar &
 exec_always --no-startup-id caffeine kill ; caffeine &
 exec_always --no-startup-id autotiling &
 exec_always --no-startup-id newlook &
-exec_always --no-startup-id picom &
+exec_always --no-startup-id picom --animations &
 exec_always --no-startup-id xclip &
 exec_always --no-startup-id udiskie &

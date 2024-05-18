@@ -38,7 +38,7 @@ fonts=("ttf-joypixels" "ttf-jetbrains-mono-nerd" "ttf-ms-fonts" "noto-fonts-emoj
 
 dev=("nodejs" "npm" "lua" "python-pip")
 
-apps=("onlyoffice-bin" "yt-dlp" "silicon" "arandr" "dunst" "github-cli" "picom" "polybar" "firefox" "alacritty" "pcmanfm" "zathura" "zathura-pdf-mupdf")
+apps=("onlyoffice-bin" "yt-dlp" "silicon" "arandr" "dunst" "github-cli" "picom-ftlabs-git" "polybar" "firefox" "alacritty" "pcmanfm" "zathura" "zathura-pdf-mupdf")
 
 for program in "${graphics[@]}"; do
 	if ! yay -Q "$program" >/dev/null 2>&1; then
