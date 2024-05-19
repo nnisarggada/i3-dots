@@ -64,7 +64,7 @@
     show_indicators = yes
 
     enable_recursive_icon_lookup = true
-    icon_theme = oomox-gruvbox-dark
+    icon_theme = papirus
     icon_position = left
     min_icon_size = 25
     max_icon_size = 128
