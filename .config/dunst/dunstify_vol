@@ -8,7 +8,7 @@ source_name="@DEFAULT_SOURCE@"
 sink_tag="string:x-dunst-stack-tag:sink"
 source_tag="string:x-dunst-stack-tag:source"
 
-vol_max=100
+vol_max=150
 
 function sink_notification {
 	sink_muted=$(pactl get-sink-mute $sink_name | awk '{print $2}')
